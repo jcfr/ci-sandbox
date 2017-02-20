@@ -15,7 +15,7 @@ deployment:
     owner: jcfr
     commands:
       - echo "deployment-nightly"
-  nightly:
+  release:
     tag: /v[0-9]+\.[0-9]+\.[0-9]+/
     owner: jcfr
     commands:
