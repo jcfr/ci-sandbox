@@ -16,3 +16,5 @@ script:
 after_success:
   - echo "success"
 
+notifications:
+  email: false
