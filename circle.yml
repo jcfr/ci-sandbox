@@ -1,0 +1,22 @@
+machine:
+  python:
+    version: 2.7.11
+
+dependencies:
+  override:
+    - echo "dependencies"
+test:
+  override:
+    - echo "test"
+
+deployment:
+  nightly:
+    branch: master
+    owner: jcfr
+    commands:
+      - echo "deployment-nightly"
+  nightly:
+    tag: /v[0-9]+\.[0-9]+\.[0-9]+/
+    owner: jcfr
+    commands:
+      - echo "deployment-release"
