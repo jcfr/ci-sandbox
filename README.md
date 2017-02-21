@@ -40,21 +40,20 @@ notifications:
   * ``nightly``: associated with ``master`` branch
   * ``release``: associated with a [tag regular expression](https://circleci.com/docs/configuration/#tags): ``/v[0-9]+\.[0-9]+\.[0-9]+/``
 
+  ```
+  deployment:
+    nightly:
+      branch: master
+      owner: jcfr
+      commands:
+        - echo "deployment-nightly"
+    release:
+      tag: /v[0-9]+\.[0-9]+\.[0-9]+/
+      owner: jcfr
+      commands:
+        - echo "deployment-release"
+  ```
 
-```
-deployment:
-  nightly:
-    branch: master
-    owner: jcfr
-    commands:
-      - echo "deployment-nightly"
-  release:
-    tag: /v[0-9]+\.[0-9]+\.[0-9]+/
-    owner: jcfr
-    commands:
-      - echo "deployment-release"
-```
+  Submission when ``master`` is updated:
 
-Submission when ``master`` is updated:
-
-![](https://raw.githubusercontent.com/jcfr/ci-sandbox/master/images/circleci-deployment-release-nightly-master-updated.png)
+  ![](https://raw.githubusercontent.com/jcfr/ci-sandbox/master/images/circleci-deployment-release-nightly-master-updated.png)
