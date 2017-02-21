@@ -57,3 +57,17 @@ notifications:
   Submission when ``master`` is updated:
 
   ![](https://raw.githubusercontent.com/jcfr/ci-sandbox/master/images/circleci-deployment-release-nightly-master-updated.png)
+
+  Submission after creating and pushing a tag:
+
+  ```
+  git tag -s -m "v0.1.0" v0.1.0
+  git push origin v0.1.0
+  ```
+
+  works as expected:
+
+  ![](https://raw.githubusercontent.com/jcfr/ci-sandbox/master/images/circleci-deployment-release-nightly-signed-tag-pushed_1.png)
+
+  ![](https://raw.githubusercontent.com/jcfr/ci-sandbox/master/images/circleci-deployment-release-nightly-signed-tag-pushed_2.png)
+
