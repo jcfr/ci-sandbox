@@ -71,3 +71,26 @@ notifications:
 
   ![](https://raw.githubusercontent.com/jcfr/ci-sandbox/master/images/circleci-deployment-release-nightly-signed-tag-pushed_2.png)
 
+## TravisCI
+
+* Two sections each associated with a [script](https://docs.travis-ci.com/user/deployment/script/) provider.
+
+```
+deploy:
+  - provider: script
+    script: echo "deployment-release"
+    skip_cleanup: true
+    on:
+      repo: jcfr/ci-sandbox
+      tags: true
+  - provider: script
+    script: echo "deployment-nightly"
+    skip_cleanup: true
+    on:
+      repo: jcfr/ci-sandbox
+      branch: master
+```
+
+Here is a submission associated with ``master``:
+
+![](https://raw.githubusercontent.com/jcfr/ci-sandbox/master/images/travis-deploy-nightly.png)
