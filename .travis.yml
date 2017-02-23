@@ -16,5 +16,19 @@ script:
 after_success:
   - echo "success"
 
+deploy:
+  - provider: script
+    script: echo "deployment-release"
+    skip_cleanup: true
+    on:
+      repo: jcfr/ci-sandbox
+      tags: true
+  - provider: script
+    script: echo "deployment-nightly"
+    skip_cleanup: true
+    on:
+      repo: jcfr/ci-sandbox
+      branch: master
+
 notifications:
   email: false
