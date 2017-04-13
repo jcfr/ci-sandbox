@@ -18,19 +18,13 @@ after_success:
 
 deploy:
   - provider: script
-    script: pwd \
-      && ls \
-      && cd /home/travis/build/jcfr/ci-sandbox \
-      && echo "deployment-release"
+    script: pwd && ls && cd /home/travis/build/jcfr/ci-sandbox && echo "deployment-release"
     skip_cleanup: true
     on:
       repo: jcfr/ci-sandbox
       tags: true
   - provider: script
-    script: pwd \
-      && ls \
-      && cd /home/travis/build/jcfr/ci-sandbox \
-      && echo "deployment-nightly"
+    script: pwd && ls && cd /home/travis/build/jcfr/ci-sandbox && echo "deployment-nightly"
     skip_cleanup: true
     on:
       repo: jcfr/ci-sandbox
