@@ -1,0 +1,2478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-"
+	BuildStamp="20170426-0546-Experimental"
+	Name="CerroTorre"
+	Generator="ctest-3.4.2"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Linux"
+	Hostname="CerroTorre"
+	OSRelease="4.2.0-42-generic"
+	OSVersion="#49-Ubuntu SMP Tue Jun 28 21:26:26 UTC 2016"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="94"
+	ProcessorCacheSize="8192"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="1"
+	TotalVirtualMemory="63336"
+	TotalPhysicalMemory="62267"
+	LogicalProcessorsPerPhysical="8"
+	ProcessorClockFrequency="3489.74"
+	>
+	<Testing>
+		<StartDateTime>Apr 26 01:47 EDT</StartDateTime>
+		<StartTestTime>1493185650</StartTestTime>
+		<TestList>
+			<Test>./puglint_core</Test>
+			<Test>./eslint_google_analytics</Test>
+			<Test>./eslint_oauth</Test>
+			<Test>./python_static_analysis_provenance_tests</Test>
+			<Test>./python_static_analysis_item_licenses_tests</Test>
+			<Test>./python_static_analysis_autojoin_tests</Test>
+			<Test>./python_static_analysis_curation_tests</Test>
+			<Test>./eslint_gravatar</Test>
+			<Test>./python_static_analysis_hashsum_download_tests</Test>
+			<Test>./eslint_geospatial</Test>
+			<Test>./python_static_analysis_thumbnails_tests</Test>
+			<Test>./python_static_analysis_jobs</Test>
+			<Test>./python_static_analysis_jobs_tests</Test>
+			<Test>./python_static_analysis_item_tasks</Test>
+			<Test>./eslint_autojoin</Test>
+			<Test>./eslint_worker</Test>
+			<Test>./eslint_item_licenses</Test>
+			<Test>./python_static_analysis_dicom_viewer_tests</Test>
+			<Test>./eslint_hashsum_download</Test>
+			<Test>./python_static_analysis_provenance</Test>
+			<Test>./python_static_analysis_oauth</Test>
+			<Test>./python_static_analysis_worker</Test>
+			<Test>./python_static_analysis_hdfs_assetstore_tests</Test>
+			<Test>./eslint_provenance</Test>
+			<Test>./python_static_analysis_item_licenses</Test>
+			<Test>./python_static_analysis_metadata_extractor_tests</Test>
+			<Test>./eslint_celery_jobs</Test>
+			<Test>./python_static_analysis_user_quota</Test>
+			<Test>./python_static_analysis_gravatar</Test>
+			<Test>./python_static_analysis_metadata_extractor</Test>
+			<Test>./eslint_authorized_upload</Test>
+			<Test>./python_static_analysis_google_analytics_tests</Test>
+			<Test>./python_static_analysis_dicom_viewer</Test>
+			<Test>./python_static_analysis_hdfs_assetstore</Test>
+			<Test>./python_static_analysis_google_analytics</Test>
+			<Test>./python_static_analysis_geospatial_tests</Test>
+			<Test>./python_static_analysis_authorized_upload_tests</Test>
+			<Test>./python_static_analysis_gravatar_tests</Test>
+			<Test>./python_static_analysis_hashsum_download</Test>
+			<Test>./python_static_analysis_user_quota_tests</Test>
+			<Test>./python_static_analysis_geospatial</Test>
+			<Test>./python_static_analysis_homepage</Test>
+			<Test>./eslint_grunt_main</Test>
+			<Test>./python_static_analysis_authorized_upload</Test>
+			<Test>./python_static_analysis_worker_tests</Test>
+			<Test>./python_static_analysis_thumbnails</Test>
+			<Test>./python_static_analysis_autojoin</Test>
+			<Test>./python_static_analysis_mongo_search_tests</Test>
+			<Test>./python_static_analysis_mongo_search</Test>
+			<Test>./python_static_analysis_item_tasks_tests</Test>
+			<Test>./python_static_analysis_curation</Test>
+			<Test>./eslint_dicom_viewer</Test>
+			<Test>./puglint_item_tasks</Test>
+			<Test>./puglint_jobs</Test>
+			<Test>./puglint_oauth</Test>
+			<Test>./python_static_analysis_celery_jobs</Test>
+			<Test>./python_static_analysis_homepage_tests</Test>
+			<Test>./puglint_autojoin</Test>
+			<Test>./puglint_authorized_upload</Test>
+			<Test>./puglint_google_analytics</Test>
+			<Test>./puglint_hdfs_assetstore</Test>
+			<Test>./puglint_celery_jobs</Test>
+			<Test>./puglint_geospatial</Test>
+			<Test>./puglint_gravatar</Test>
+			<Test>./puglint_dicom_viewer</Test>
+			<Test>./puglint_curation</Test>
+			<Test>./puglint_user_quota</Test>
+			<Test>./puglint_homepage</Test>
+			<Test>./puglint_worker</Test>
+			<Test>./puglint_thumbnails</Test>
+			<Test>./python_static_analysis_core_tests</Test>
+			<Test>./puglint_hashsum_download</Test>
+			<Test>./puglint_item_licenses</Test>
+			<Test>./server_upload</Test>
+			<Test>./packaging_verify_contents</Test>
+			<Test>./puglint_provenance</Test>
+			<Test>./py_coverage_combine</Test>
+			<Test>./puglint_item_previews</Test>
+			<Test>./eslint_item_previews</Test>
+			<Test>./python_static_analysis_python_client</Test>
+			<Test>./py_coverage</Test>
+			<Test>./web_client_admin</Test>
+			<Test>./js_coverage_combine_report</Test>
+			<Test>./py_coverage_html</Test>
+			<Test>./py_coverage_xml</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>puglint_core</Name>
+			<Path>.</Path>
+			<FullName>./puglint_core</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/clients/web/src/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.803104</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/clients/web/src/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_google_analytics</Name>
+			<Path>.</Path>
+			<FullName>./eslint_google_analytics</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/google_analytics/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.764944</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/google_analytics/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_oauth</Name>
+			<Path>.</Path>
+			<FullName>./eslint_oauth</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/oauth/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.966843</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/oauth/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_provenance_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_provenance_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/provenance/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.766131</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/provenance/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_item_licenses_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_item_licenses_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/item_licenses/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.865672</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/item_licenses/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_autojoin_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_autojoin_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/autojoin/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.904182</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/autojoin/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_curation_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_curation_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/curation/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.702997</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/curation/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_gravatar</Name>
+			<Path>.</Path>
+			<FullName>./eslint_gravatar</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/gravatar/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.702168</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/gravatar/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_hashsum_download_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_hashsum_download_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/hashsum_download/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.903089</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/hashsum_download/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_geospatial</Name>
+			<Path>.</Path>
+			<FullName>./eslint_geospatial</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/geospatial/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.902971</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/geospatial/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_thumbnails_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_thumbnails_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/thumbnails/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.902235</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/thumbnails/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_jobs</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_jobs</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/jobs/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.800024</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/jobs/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_jobs_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_jobs_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/jobs/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>1.00044</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/jobs/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_item_tasks</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_item_tasks</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/item_tasks/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.9002</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/item_tasks/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_autojoin</Name>
+			<Path>.</Path>
+			<FullName>./eslint_autojoin</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/autojoin/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.899426</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/autojoin/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_worker</Name>
+			<Path>.</Path>
+			<FullName>./eslint_worker</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/worker/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.704377</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/worker/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_item_licenses</Name>
+			<Path>.</Path>
+			<FullName>./eslint_item_licenses</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/item_licenses/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.904746</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/item_licenses/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_dicom_viewer_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_dicom_viewer_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/dicom_viewer/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.702411</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/dicom_viewer/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_hashsum_download</Name>
+			<Path>.</Path>
+			<FullName>./eslint_hashsum_download</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/hashsum_download/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.703187</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/hashsum_download/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_provenance</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_provenance</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/provenance/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.804162</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/provenance/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="failed">
+			<Name>python_static_analysis_oauth</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_oauth</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/oauth/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.803751</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/oauth/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>/home/jcfr/Projects/girder/plugins/oauth/server/providers/__init__.py:33: [E305] expected 2 blank lines after class or function definition, found 1
+idMap = collections.OrderedDict()
+^
+</Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_worker</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_worker</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/worker/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>1.00425</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/worker/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_hdfs_assetstore_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_hdfs_assetstore_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/hdfs_assetstore/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>1.10363</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/hdfs_assetstore/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_provenance</Name>
+			<Path>.</Path>
+			<FullName>./eslint_provenance</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/provenance/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.802466</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/provenance/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_item_licenses</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_item_licenses</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/item_licenses/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.706589</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/item_licenses/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_metadata_extractor_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_metadata_extractor_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/metadata_extractor/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.707953</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/metadata_extractor/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_celery_jobs</Name>
+			<Path>.</Path>
+			<FullName>./eslint_celery_jobs</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/celery_jobs/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.809329</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/celery_jobs/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_user_quota</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_user_quota</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/user_quota/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>1.00592</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/user_quota/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_gravatar</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_gravatar</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/gravatar/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.803984</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/gravatar/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_metadata_extractor</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_metadata_extractor</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/metadata_extractor/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.803284</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/metadata_extractor/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_authorized_upload</Name>
+			<Path>.</Path>
+			<FullName>./eslint_authorized_upload</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/authorized_upload/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.904939</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/authorized_upload/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_google_analytics_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_google_analytics_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/google_analytics/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.681282</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/google_analytics/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_dicom_viewer</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_dicom_viewer</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/dicom_viewer/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.782218</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/dicom_viewer/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_hdfs_assetstore</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_hdfs_assetstore</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/hdfs_assetstore/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.882328</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/hdfs_assetstore/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_google_analytics</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_google_analytics</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/google_analytics/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.654677</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/google_analytics/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_geospatial_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_geospatial_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/geospatial/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.74633</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/geospatial/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_authorized_upload_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_authorized_upload_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/authorized_upload/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>1.14674</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/authorized_upload/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_gravatar_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_gravatar_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/gravatar/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.945665</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/gravatar/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_hashsum_download</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_hashsum_download</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/hashsum_download/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.803308</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/hashsum_download/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_user_quota_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_user_quota_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/user_quota/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.905134</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/user_quota/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_geospatial</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_geospatial</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/geospatial/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.741188</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/geospatial/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_homepage</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_homepage</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/homepage/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.740492</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/homepage/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_grunt_main</Name>
+			<Path>.</Path>
+			<FullName>./eslint_grunt_main</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "Gruntfile.js"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.741011</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "Gruntfile.js"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_authorized_upload</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_authorized_upload</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/authorized_upload/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.688213</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/authorized_upload/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_worker_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_worker_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/worker/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.928161</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/worker/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_thumbnails</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_thumbnails</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/thumbnails/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.689839</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/thumbnails/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_autojoin</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_autojoin</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/autojoin/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.789822</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/autojoin/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_mongo_search_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_mongo_search_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/mongo_search/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.803893</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/mongo_search/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_mongo_search</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_mongo_search</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/mongo_search/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.656082</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/mongo_search/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_item_tasks_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_item_tasks_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/item_tasks/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.782224</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/item_tasks/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_curation</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_curation</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/curation/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.783488</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/curation/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_dicom_viewer</Name>
+			<Path>.</Path>
+			<FullName>./eslint_dicom_viewer</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/dicom_viewer/web_external/js"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.508375</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/dicom_viewer/web_external/js"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_item_tasks</Name>
+			<Path>.</Path>
+			<FullName>./puglint_item_tasks</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/item_tasks/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.267959</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/item_tasks/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_jobs</Name>
+			<Path>.</Path>
+			<FullName>./puglint_jobs</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/jobs/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.313285</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/jobs/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_oauth</Name>
+			<Path>.</Path>
+			<FullName>./puglint_oauth</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/oauth/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.308077</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/oauth/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_celery_jobs</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_celery_jobs</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/celery_jobs/server"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.850718</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/celery_jobs/server"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_homepage_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_homepage_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/homepage/plugin_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.85149</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/plugins/homepage/plugin_tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_autojoin</Name>
+			<Path>.</Path>
+			<FullName>./puglint_autojoin</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/autojoin/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.16492</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/autojoin/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_authorized_upload</Name>
+			<Path>.</Path>
+			<FullName>./puglint_authorized_upload</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/authorized_upload/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.170012</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/authorized_upload/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_google_analytics</Name>
+			<Path>.</Path>
+			<FullName>./puglint_google_analytics</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/google_analytics/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.269531</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/google_analytics/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_hdfs_assetstore</Name>
+			<Path>.</Path>
+			<FullName>./puglint_hdfs_assetstore</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/hdfs_assetstore/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.322719</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/hdfs_assetstore/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_celery_jobs</Name>
+			<Path>.</Path>
+			<FullName>./puglint_celery_jobs</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/celery_jobs/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.375575</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/celery_jobs/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_geospatial</Name>
+			<Path>.</Path>
+			<FullName>./puglint_geospatial</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/geospatial/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.455186</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/geospatial/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_gravatar</Name>
+			<Path>.</Path>
+			<FullName>./puglint_gravatar</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/gravatar/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.457662</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/gravatar/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_dicom_viewer</Name>
+			<Path>.</Path>
+			<FullName>./puglint_dicom_viewer</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/dicom_viewer/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.332565</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/dicom_viewer/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_curation</Name>
+			<Path>.</Path>
+			<FullName>./puglint_curation</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/curation/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.190981</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/curation/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_user_quota</Name>
+			<Path>.</Path>
+			<FullName>./puglint_user_quota</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/user_quota/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.525058</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/user_quota/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_homepage</Name>
+			<Path>.</Path>
+			<FullName>./puglint_homepage</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/homepage/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.20327</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/homepage/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_worker</Name>
+			<Path>.</Path>
+			<FullName>./puglint_worker</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/worker/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.202656</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/worker/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_thumbnails</Name>
+			<Path>.</Path>
+			<FullName>./puglint_thumbnails</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/thumbnails/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.205356</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/thumbnails/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_core_tests</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_core_tests</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>2.11428</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/tests"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_hashsum_download</Name>
+			<Path>.</Path>
+			<FullName>./puglint_hashsum_download</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/hashsum_download/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.151741</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/hashsum_download/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_item_licenses</Name>
+			<Path>.</Path>
+			<FullName>./puglint_item_licenses</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/item_licenses/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.158987</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/item_licenses/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>server_upload</Name>
+			<Path>.</Path>
+			<FullName>./server_upload</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/coverage "run" "--parallel-mode" "--rcfile=/home/jcfr/Projects/girder-build/tests/girder.coveragerc" "--source=girder,/home/jcfr/Projects/girder/clients/python/girder_client" "-m" "unittest" "-v" "tests.cases.upload_test"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>136.803</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/coverage "run" "--parallel-mode" "--rcfile=/home/jcfr/Projects/girder-build/tests/girder.coveragerc" "--source=girder,/home/jcfr/Projects/girder/clients/python/girder_client" "-m" "unittest" "-v" "tests.cases.upload_test"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>[NON-XML-CHAR-0x1B][1;33mMocking Girder log methods.[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][35mConnected to MongoDB: mongodb://localhost:27017/girder_test_server_upload[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][35mRunning in mode: testing[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][35mResolving plugin dependencies...[NON-XML-CHAR-0x1B][0m
+/home/jcfr/Projects/girder/girder/api/describe.py:544: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  fnInfo = inspect.getargspec(fun)
+/home/jcfr/.virtualenvs/girder_env/lib/python3.5/importlib/_bootstrap_external.py:412: ImportWarning: Not importing directory /home/jcfr/.virtualenvs/girder_env/lib/python3.5/site-packages/google: missing __init__
+  _warnings.warn(msg.format(portions[0]), ImportWarning)
+/home/jcfr/Projects/girder/girder/api/describe.py:544: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  fnInfo = inspect.getargspec(fun)
+[26/Apr/2017:01:51:13] ENGINE Bus STARTING
+[NON-XML-CHAR-0x1B][35mStarted asynchronous event manager thread.[NON-XML-CHAR-0x1B][0m
+[26/Apr/2017:01:51:13] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2017:01:51:13] ENGINE Bu...
+The rest of the test output was removed since it exceeds the threshold of 1024 bytes.
+</Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_python</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>packaging_verify_contents</Name>
+			<Path>.</Path>
+			<FullName>./packaging_verify_contents</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/python "/home/jcfr/Projects/girder/tests/packaging/test_package_contents.py"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.113384</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/python "/home/jcfr/Projects/girder/tests/packaging/test_package_contents.py"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_python</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_provenance</Name>
+			<Path>.</Path>
+			<FullName>./puglint_provenance</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/provenance/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.315347</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/provenance/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>py_coverage_combine</Name>
+			<Path>.</Path>
+			<FullName>./py_coverage_combine</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/coverage "combine"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.516417</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/coverage "combine"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_python</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>puglint_item_previews</Name>
+			<Path>.</Path>
+			<FullName>./puglint_item_previews</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/item_previews/web_client/templates"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.200615</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/pug-lint "-c" "/home/jcfr/Projects/girder/.pug-lintrc" "/home/jcfr/Projects/girder/plugins/item_previews/web_client/templates"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>eslint_item_previews</Name>
+			<Path>.</Path>
+			<FullName>./eslint_item_previews</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/item_previews/web_client"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.71581</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/eslint "--ignore-path" "/home/jcfr/Projects/girder/.eslintignore" "--config" "/home/jcfr/Projects/girder/.eslintrc" "/home/jcfr/Projects/girder/plugins/item_previews/web_client"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>python_static_analysis_python_client</Name>
+			<Path>.</Path>
+			<FullName>./python_static_analysis_python_client</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/clients/python"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.957633</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/flake8 "--config=/home/jcfr/Projects/girder/tests/flake8.cfg" "/home/jcfr/Projects/girder/clients/python"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_static_analysis</Label>
+			</Labels>
+		</Test>
+		<Test Status="failed">
+			<Name>py_coverage</Name>
+			<Path>.</Path>
+			<FullName>./py_coverage</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/coverage "report" "--rcfile=/home/jcfr/Projects/girder-build/tests/girder.coveragerc" "--fail-under=90"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>2</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.992005</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/coverage "report" "--rcfile=/home/jcfr/Projects/girder-build/tests/girder.coveragerc" "--fail-under=90"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>Name                                                      Stmts   Miss  Cover
+-----------------------------------------------------------------------------
+clients/python/girder_client/__init__.py                    561     18    97%
+clients/python/girder_client/__main__.py                      0      0   100%
+clients/python/girder_client/cli.py                         132     17    87%
+girder/__init__.py                                          109      3    97%
+girder/__main__.py                                           19     19     0%
+girder/api/__init__.py                                        0      0   100%
+girder/api/access.py                                         70      9    87%
+girder/api/api_main.py                                       27      0   100%
+girder/api/describe.py                                      289      8    97%
+girder/api/docs.py                                           42      3    93%
+girder/api/filter_logging.py                                 40      0   100%
+girder/api/rest.py                                          472     24    95%
+girder/api/sftp.py                                          159      7    96%
+girder/api/v1/__init__.py                                     0      0   100%
+girder/api/v1/api_key.py                                     45      1    98%
+girder/api/v1/assetstore.py                                  78      8    90%
+girder/api/v1/collection.py                                  77      1    99%
+girder/api/v1/file.py                                       142      9    94%
+girder/api/v1/folder.py                                     124      2    98%
+girder/api/v1/group.py                                      148     19    87%
+girder/api/v1/item.py                                       102      2    98%
+girder/api/v1/notification.py                                44      0   100%
+girder/api/v1/resource.py                                   178      5    97%
+girder/api/v1/system.py                                     269     10    96%
+girder/api/v1/token.py                                       31      0   100%
+girder/api/v1/user.py                                       178     46    74%
+girder/constants.py                                         118      2    98%
+girder/events.py                                             91      3    97%
+girder/models/__init__.py                                    41      6    85%
+girder/models/api_key.py                                     42      2    95%
+girder/models/assetstore.py                                  65      4    94%
+girder/models/collection.py                                 103      3    97%
+girder/models/file.py                                       119     12    90%
+girder/models/folder.py                                     305     18    94%
+girder/models/group.py                                      132     20    85%
+girder/models/item.py                                       190     14    93%
+girder/models/model_base.py                                 473     33    93%
+girder/models/notification.py                                67      0   100%
+girder/models/password.py                                    57      9    84%
+girder/models/setting.py                                    207      4    98%
+girder/models/token.py                                       48      8    83%
+girder/models/upload.py                                     181     10    94%
+girder/models/user.py                                       174     18    90%
+girder/utility/__init__.py                                   60      2    97%
+girder/utility/abstract_assetstore_adapter.py               116      9    92%
+girder/utility/acl_mixin.py                                  70      8    89%
+girder/utility/assetstore_utilities.py                       17      2    88%
+girder/utility/config.py                                     35      5    86%
+girder/utility/filesystem_assetstore_adapter.py             220     22    90%
+girder/utility/gridfs_assetstore_adapter.py                 137     18    87%
+girder/utility/hash_state.py                                 46      2    96%
+girder/utility/install.py                                   144     37    74%
+girder/utility/mail_utils.py                                 79      5    94%
+girder/utility/model_importer.py                             35      0   100%
+girder/utility/path.py                                       89      2    98%
+girder/utility/plugin_utilities.py                          190     48    75%
+girder/utility/progress.py                                   41      0   100%
+girder/utility/s3_assetstore_adapter.py                     373     43    88%
+girder/utility/server.py                                     90      4    96%
+girder/utility/setting_utilities.py                          36      0   100%
+girder/utility/system.py                                    117      8    93%
+girder/utility/webroot.py                                    46      2    96%
+girder/utility/ziputil.py                                   134      8    94%
+plugins/authorized_upload/server/__init__.py                 56      0   100%
+plugins/authorized_upload/server/constants.py                 1      0   100%
+plugins/authorized_upload/server/rest.py                     24      3    88%
+plugins/autojoin/server/__init__.py                          17      0   100%
+plugins/curation/server/__init__.py                         133     24    82%
+plugins/dicom_viewer/server/__init__.py                      71      6    92%
+plugins/geospatial/server/__init__.py                        10      0   100%
+plugins/geospatial/server/geospatial.py                     152     30    80%
+plugins/google_analytics/server/__init__.py                   8      1    88%
+plugins/google_analytics/server/constants.py                  2      0   100%
+plugins/google_analytics/server/rest.py                      13      0   100%
+plugins/gravatar/server/__init__.py                          29      1    97%
+plugins/hashsum_download/server/__init__.py                  50      3    94%
+plugins/hdfs_assetstore/server/__init__.py                   30     30     0%
+plugins/hdfs_assetstore/server/assetstore.py                136    136     0%
+plugins/hdfs_assetstore/server/rest.py                       52     52     0%
+plugins/homepage/server/__init__.py                          24      0   100%
+plugins/item_licenses/server/__init__.py                     66      1    98%
+plugins/item_licenses/server/constants.py                     4      0   100%
+plugins/item_licenses/server/rest.py                         12      0   100%
+plugins/item_tasks/server/__init__.py                        40     33    18%
+plugins/item_tasks/server/cli_parser.py                      53     52     2%
+plugins/item_tasks/server/constants.py                        3      0   100%
+plugins/item_tasks/server/rest.py                           164    153     7%
+plugins/jobs/server/__init__.py                              14      1    93%
+plugins/jobs/server/constants.py                             23      2    91%
+plugins/jobs/server/job_rest.py                              43      0   100%
+plugins/jobs/server/models/__init__.py                        0      0   100%
+plugins/jobs/server/models/job.py                           182      8    96%
+plugins/metadata_extractor/server/__init__.py                 9      6    33%
+plugins/metadata_extractor/server/metadata_extractor.py      53     50     6%
+plugins/mongo_search/server/__init__.py                      29      1    97%
+plugins/oauth/server/__init__.py                             23      2    91%
+plugins/oauth/server/constants.py                            14      0   100%
+plugins/oauth/server/providers/__init__.py                   16      0   100%
+plugins/oauth/server/providers/base.py                      107     18    83%
+plugins/oauth/server/providers/bitbucket.py                  43      2    95%
+plugins/oauth/server/providers/box.py                        37      2    95%
+plugins/oauth/server/providers/github.py                     42     12    71%
+plugins/oauth/server/providers/globus.py                     39      2    95%
+plugins/oauth/server/providers/google.py                     42      3    93%
+plugins/oauth/server/providers/linkedin.py                   39      2    95%
+plugins/oauth/server/rest.py                                 61      3    95%
+plugins/provenance/server/__init__.py                        21      1    95%
+plugins/provenance/server/constants.py                        2      0   100%
+plugins/provenance/server/resource.py                       233     17    93%
+plugins/thumbnails/server/__init__.py                        25     13    48%
+plugins/thumbnails/server/rest.py                            22      1    95%
+plugins/thumbnails/server/worker.py                          97     90     7%
+plugins/user_quota/server/__init__.py                        20      0   100%
+plugins/user_quota/server/constants.py                        3      0   100%
+plugins/user_quota/server/quota.py                          191     10    95%
+plugins/worker/server/__init__.py                            44      1    98%
+plugins/worker/server/constants.py                            6      0   100%
+plugins/worker/server/utils.py                               20      1    95%
+-----------------------------------------------------------------------------
+TOTAL                                                     10474   1375    87%
+</Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_python</Label>
+			</Labels>
+		</Test>
+		<Test Status="failed">
+			<Name>web_client_admin</Name>
+			<Path>.</Path>
+			<FullName>./web_client_admin</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/python "-m" "unittest" "-v" "tests.web_client_test"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement name="PhantomErrorScreenshot" type="image/png" encoding="base64">
+					<Value>iVBORw0KGgoAAAANSUhEUgAABAAAAAM/CAYAAABPlqB1AAAACXBIWXMAAAsTA
+AALEwEAmpwYAAAgAElEQVR4nOzdd3hU1dbH8e9MOmmkEwgthh5CkC5IB6kqC
+IiAIqgoKoIgXkQUOzYQ0Yu+KjZUpEhXr4AgvXcILfSakEp6mZn3j5CRIYUEA
+kHz+zzPfZw5Ze81ZwYue5291zG0adnSgoiIiIiIiIj8qxlLOwARERERERERu
+fmUABAREREREREpA5QAEBERERERESkDlAAQERERERERKQOUABAREREREREpA
+5QAEBERERERESkDlAAQERERERERKQOUABAREREREREpA5QAEBERERERESkDl
+[...]
+iIiIiI+QAGAiIiIiBe4XK6TfkREROqSAgARERERLzMYDN4uQURELnC1+V3y/
+wEQl6Gu7dZ34wAAAABJRU5ErkJggg==</Value>
+				</NamedMeasurement>
+				<NamedMeasurement name="PhantomErrorScreenshot" type="image/png" encoding="base64">
+					<Value>iVBORw0KGgoAAAANSUhEUgAABAAAAAM/CAYAAABPlqB1AAAACXBIWXMAAAsTA
+AALEwEAmpwYAAAgAElEQVR4nOzdd3hU1dbH8e9MOmmkEwgthh5CkC5IB6kqC
+IiAIqgoKoIgXkQUOzYQ0Yu+KjZUpEhXr4AgvXcILfSakEp6mZn3j5CRIYUEA
+kHz+zzPfZw5Ze81ZwYue5291zG0adnSgoiIiIiIiIj8qxlLOwARERERERERu
+fmUABAREREREREpA5QAEBERERERESkDlAAQERERERERKQOUABAREREREREpA
+[...]
+iIiIiIiIj5AAYCIiIiIiIiID1AAICIiIiIiIuIDFACIiIiIiIiI+AAFACIiI
+iIiIiI+QAGAiIiIiBe4XK6TfkREROqSAgARERERLzMYDN4uQURELnC1+V3y/
+wEQl6Gu7dZ34wAAAABJRU5ErkJggg==</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>51.5119</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/python "-m" "unittest" "-v" "tests.web_client_test"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>[NON-XML-CHAR-0x1B][1;33mMocking Girder log methods.[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][35mConnected to MongoDB: mongodb://localhost:27017/girder_test_web_client_admin[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][35mRunning in mode: testing[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][35mResolving plugin dependencies...[NON-XML-CHAR-0x1B][0m
+/home/jcfr/Projects/girder/girder/api/describe.py:544: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  fnInfo = inspect.getargspec(fun)
+/home/jcfr/.virtualenvs/girder_env/lib/python3.5/importlib/_bootstrap_external.py:412: ImportWarning: Not importing directory /home/jcfr/.virtualenvs/girder_env/lib/python3.5/site-packages/google: missing __init__
+  _warnings.warn(msg.format(portions[0]), ImportWarning)
+/home/jcfr/Projects/girder/girder/api/describe.py:544: DeprecationWarning: inspect.getargspec() is deprecated, use inspect.signature() instead
+  fnInfo = inspect.getargspec(fun)
+[26/Apr/2017:01:53:31] ENGINE Bus STARTING
+[NON-XML-CHAR-0x1B][35mStarted asynchronous event manager thread.[NON-XML-CHAR-0x1B][0m
+[26/Apr/2017:01:53:31] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2017:01:53:31] ENGINE Serving on http://0.0.0.0:30005
+[26/Apr/2017:01:53:31] ENGINE Bus STARTED
+testWebClientSpec (tests.web_client_test.WebClientTestCase) ... -----------------------
+Jasmine runner starting
+-----------------------
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; No admin console without logging in[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; register a user (first is admin)[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; Admin console should show when admin is logged in[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; logout from admin account[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; No admin console directly after admin logs out[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; register a (normal user)[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; No admin console when logging in as a normal user[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; go to groups page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; Create a public group[NON-XML-CHAR-0x1B][0m
+
+[NON-XML-CHAR-0x1B][32mCreate an admin and non-admin user: 13 of 13 passed.[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Logout[NON-XML-CHAR-0x1B][0m
+401 Unauthorized {"message": "Administrator access required.", "type": "access"}
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Test that anonymous loading settings page prompts login[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Login as admin[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Go to settings page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Settings should display their expected values[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Change settings[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Use search to update collection create policy[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; logout and check for redirect to front page from settings page[NON-XML-CHAR-0x1B][0m
+
+[NON-XML-CHAR-0x1B][32mTest the settings page: 12 of 12 passed.[NON-XML-CHAR-0x1B][0m
+401 Unauthorized {"message": "Administrator access required.", "type": "access"}
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Test that anonymous loading assetstore page prompts login[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Go to assetstore page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a filesystem assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][35mConnected to MongoDB: mongodb://localhost:27017/girder_test_web_client_admin[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][35mConnected to MongoDB: mongodb://localhost:27017/girder_test_web_client_admin[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][35mConnected to MongoDB: mongodb://localhost:27017/girder_test_web_client_admin[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a gridfs assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a gridfs-rs assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a s3 assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; logout from admin account[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; logout and check for redirect to front page from assetstore page[NON-XML-CHAR-0x1B][0m
+
+[NON-XML-CHAR-0x1B][32mTest the assetstore page: 9 of 9 passed.[NON-XML-CHAR-0x1B][0m
+401 Unauthorized {"message": "Administrator access required.", "type": "access"}
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Test that anonymous loading plugins page prompts login[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Login as admin[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Go to plugins page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Enable a plugin with non-existent dependencies[NON-XML-CHAR-0x1B][0m
+jQuery.Deferred exception: undefined is not a function (near '...}).error(function () {...') wait@http://localhost:30005/clients/web/static/built/girder_lib.min.js:25294:25
+http://localhost:30005/clients/web/static/built/girder_lib.min.js:25298:17
+s@http://localhost:30005/test/lib/promise.min.js:1:1369
+o@http://localhost:30005/test/lib/promise.min.js:1:327
+waitForServer@http://localhost:30005/clients/web/static/built/girder_lib.min.js:25281:27
+http://localhost:30005/clients/web/static/built/girder_lib.min.js:25314:29
+mightThrow@http://localhost:30005/clients/web/static/built/girder_lib.min.js:8489:34
+http://localhost:30005/clients/web/static/built/girder_lib.min.js:8557:22 undefined
+Possible Unhandled Promise Rejection: TypeError: undefined is not a function (near '...}).error(function () {...')
+ERROR: TypeError: undefined is not a function (near '...}).error(function () {...')
+TRACE:
+ -&gt; http://localhost:30005/clients/web/static/built/girder_lib.min.js: 25294 (in function "wait")
+
+  phantomjs://code/specRunner.js:143 in onError
+Saved phantom_error_screenshot.png
+
+-----------------------
+Jasmine runner starting
+-----------------------
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; No admin console without logging in[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; register a user (first is admin)[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; Admin console should show when admin is logged in[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; logout from admin account[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; No admin console directly after admin logs out[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; register a (normal user)[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; No admin console when logging in as a normal user[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; go to groups page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; Create a public group[NON-XML-CHAR-0x1B][0m
+
+[NON-XML-CHAR-0x1B][32mCreate an admin and non-admin user: 13 of 13 passed.[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Logout[NON-XML-CHAR-0x1B][0m
+401 Unauthorized {"message": "Administrator access required.", "type": "access"}
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Test that anonymous loading settings page prompts login[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Login as admin[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Go to settings page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Settings should display their expected values[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Change settings[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Use search to update collection create policy[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; logout and check for redirect to front page from settings page[NON-XML-CHAR-0x1B][0m
+
+[NON-XML-CHAR-0x1B][32mTest the settings page: 12 of 12 passed.[NON-XML-CHAR-0x1B][0m
+401 Unauthorized {"message": "Administrator access required.", "type": "access"}
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Test that anonymous loading assetstore page prompts login[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Go to assetstore page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a filesystem assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a gridfs assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a gridfs-rs assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a s3 assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; logout from admin account[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; logout and check for redirect to front page from assetstore page[NON-XML-CHAR-0x1B][0m
+
+[NON-XML-CHAR-0x1B][32mTest the assetstore page: 9 of 9 passed.[NON-XML-CHAR-0x1B][0m
+401 Unauthorized {"message": "Administrator access required.", "type": "access"}
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Test that anonymous loading plugins page prompts login[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Login as admin[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Go to plugins page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Enable a plugin with non-existent dependencies[NON-XML-CHAR-0x1B][0m
+jQuery.Deferred exception: undefined is not a function (near '...}).error(function () {...') wait@http://localhost:30005/clients/web/static/built/girder_lib.min.js:25294:25
+http://localhost:30005/clients/web/static/built/girder_lib.min.js:25298:17
+s@http://localhost:30005/test/lib/promise.min.js:1:1369
+o@http://localhost:30005/test/lib/promise.min.js:1:327
+waitForServer@http://localhost:30005/clients/web/static/built/girder_lib.min.js:25281:27
+http://localhost:30005/clients/web/static/built/girder_lib.min.js:25314:29
+mightThrow@http://localhost:30005/clients/web/static/built/girder_lib.min.js:8489:34
+http://localhost:30005/clients/web/static/built/girder_lib.min.js:8557:22 undefined
+Possible Unhandled Promise Rejection: TypeError: undefined is not a function (near '...}).error(function () {...')
+ERROR: TypeError: undefined is not a function (near '...}).error(function () {...')
+TRACE:
+ -&gt; http://localhost:30005/clients/web/static/built/girder_lib.min.js: 25294 (in function "wait")
+
+  phantomjs://code/specRunner.js:143 in onError
+Saved phantom_error_screenshot.png
+
+-----------------------
+Jasmine runner starting
+-----------------------
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; No admin console without logging in[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; register a user (first is admin)[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; Admin console should show when admin is logged in[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; logout from admin account[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; No admin console directly after admin logs out[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; register a (normal user)[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; No admin console when logging in as a normal user[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; go to groups page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Create an admin and non-admin user -&gt; Create a public group[NON-XML-CHAR-0x1B][0m
+
+[NON-XML-CHAR-0x1B][32mCreate an admin and non-admin user: 13 of 13 passed.[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Logout[NON-XML-CHAR-0x1B][0m
+401 Unauthorized {"message": "Administrator access required.", "type": "access"}
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Test that anonymous loading settings page prompts login[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Login as admin[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Go to settings page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Settings should display their expected values[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Change settings[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; Use search to update collection create policy[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the settings page -&gt; logout and check for redirect to front page from settings page[NON-XML-CHAR-0x1B][0m
+
+[NON-XML-CHAR-0x1B][32mTest the settings page: 12 of 12 passed.[NON-XML-CHAR-0x1B][0m
+401 Unauthorized {"message": "Administrator access required.", "type": "access"}
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Test that anonymous loading assetstore page prompts login[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Go to assetstore page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a filesystem assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a gridfs assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a gridfs-rs assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; Create, switch to, and delete a s3 assetstore[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; logout from admin account[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the assetstore page -&gt; logout and check for redirect to front page from assetstore page[NON-XML-CHAR-0x1B][0m
+
+[NON-XML-CHAR-0x1B][32mTest the assetstore page: 9 of 9 passed.[NON-XML-CHAR-0x1B][0m
+401 Unauthorized {"message": "Administrator access required.", "type": "access"}
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Test that anonymous loading plugins page prompts login[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Login as admin[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Go to plugins page[NON-XML-CHAR-0x1B][0m
+[NON-XML-CHAR-0x1B][32m. Test the plugins page -&gt; Enable a plugin with non-existent dependencies[NON-XML-CHAR-0x1B][0m
+jQuery.Deferred exception: undefined is not a function (near '...}).error(function () {...') wait@http://localhost:30005/clients/web/static/built/girder_lib.min.js:25294:25
+http://localhost:30005/clients/web/static/built/girder_lib.min.js:25298:17
+s@http://localhost:30005/test/lib/promise.min.js:1:1369
+o@http://localhost:30005/test/lib/promise.min.js:1:327
+waitForServer@http://localhost:30005/clients/web/static/built/girder_lib.min.js:25281:27
+http://localhost:30005/clients/web/static/built/girder_lib.min.js:25314:29
+mightThrow@http://localhost:30005/clients/web/static/built/girder_lib.min.js:8489:34
+http://localhost:30005/clients/web/static/built/girder_lib.min.js:8557:22 undefined
+Possible Unhandled Promise Rejection: TypeError: undefined is not a function (near '...}).error(function () {...')
+ERROR: TypeError: undefined is not a function (near '...}).error(function () {...')
+TRACE:
+ -&gt; http://localhost:30005/clients/web/static/built/girder_lib.min.js: 25294 (in function "wait")
+
+  phantomjs://code/specRunner.js:143 in onError
+Saved phantom_error_screenshot.png
+
+/home/jcfr/.virtualenvs/girder_env/lib/python3.5/site-packages/cherrypy/_cperror.py:495: DeprecationWarning: cgi.escape is deprecated, use html.escape instead
+  kwargs[k] = _escape(kwargs[k])
+/home/jcfr/.virtualenvs/girder_env/lib/python3.5/site-packages/bcrypt/__init__.py:46: UserWarning: implicit cast to 'char *' from a different pointer type: will be forbidden in the future (check that the types are as you expect; use an explicit ffi.cast() if they are correct)
+  b"$" + prefix + b"$", rounds, salt, len(salt), output, len(output),
+Retrying test
+/home/jcfr/Projects/girder/tests/web_client_test.py:189: ResourceWarning: unclosed file &lt;_io.BufferedReader name=12&gt;
+  stderr=subprocess.STDOUT)
+Retrying test
+/home/jcfr/Projects/girder/tests/web_client_test.py:189: ResourceWarning: unclosed file &lt;_io.BufferedReader name=13&gt;
+  stderr=subprocess.STDOUT)
+Retrying test
+FAIL
+/usr/lib/python3.5/unittest/case.py:628: ResourceWarning: unclosed file &lt;_io.BufferedReader name=12&gt;
+  outcome.errors.clear()
+
+======================================================================
+FAIL: testWebClientSpec (tests.web_client_test.WebClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jcfr/Projects/girder/tests/web_client_test.py", line 225, in testWebClientSpec
+    self.assertEqual(returncode, 0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 1 test in 50.483s
+
+FAILED (failures=1)
+</Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_browser</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>js_coverage_combine_report</Name>
+			<Path>.</Path>
+			<FullName>./js_coverage_combine_report</FullName>
+			<FullCommandLine>/home/jcfr/Projects/girder/node_modules/.bin/istanbul "report" "--config" "/home/jcfr/Projects/girder/.istanbul.yml" "--root" "/home/jcfr/Projects/girder-build/js_coverage" "--include" "*.cvg" "--dir" "/home/jcfr/Projects/girder-build/coverage" "text-summary" "lcovonly" "cobertura" "html"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.603027</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/Projects/girder/node_modules/.bin/istanbul "report" "--config" "/home/jcfr/Projects/girder/.istanbul.yml" "--root" "/home/jcfr/Projects/girder-build/js_coverage" "--include" "*.cvg" "--dir" "/home/jcfr/Projects/girder-build/coverage" "text-summary" "lcovonly" "cobertura" "html"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>
+=============================== Coverage summary ===============================
+Statements   : Unknown% ( 0/0 )
+Branches     : Unknown% ( 0/0 )
+Functions    : Unknown% ( 0/0 )
+Lines        : Unknown% ( 0/0 )
+================================================================================
+</Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_browser</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>py_coverage_html</Name>
+			<Path>.</Path>
+			<FullName>./py_coverage_html</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/coverage "html" "--rcfile=/home/jcfr/Projects/girder-build/tests/girder.coveragerc" "-d" "/home/jcfr/Projects/girder/clients/web/dev/built/py_coverage" "--title=Girder Coverage Report"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>1.1264</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/coverage "html" "--rcfile=/home/jcfr/Projects/girder-build/tests/girder.coveragerc" "-d" "/home/jcfr/Projects/girder/clients/web/dev/built/py_coverage" "--title=Girder Coverage Report"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_python</Label>
+			</Labels>
+		</Test>
+		<Test Status="passed">
+			<Name>py_coverage_xml</Name>
+			<Path>.</Path>
+			<FullName>./py_coverage_xml</FullName>
+			<FullCommandLine>/home/jcfr/.virtualenvs/girder_env/bin/coverage "xml" "--rcfile=/home/jcfr/Projects/girder-build/tests/girder.coveragerc" "-o" "/home/jcfr/Projects/girder-build/coverage.xml"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>1.32663</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/jcfr/.virtualenvs/girder_env/bin/coverage "xml" "--rcfile=/home/jcfr/Projects/girder-build/tests/girder.coveragerc" "-o" "/home/jcfr/Projects/girder-build/coverage.xml"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>girder_python</Label>
+			</Labels>
+		</Test>
+		<EndDateTime>Apr 26 01:54 EDT</EndDateTime>
+		<EndTestTime>1493186063</EndTestTime>
+		<ElapsedMinutes>6.8</ElapsedMinutes>
+	</Testing>
+</Site>

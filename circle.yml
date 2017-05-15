@@ -7,7 +7,15 @@ dependencies:
     - echo "dependencies"
 test:
   override:
-    - echo "test"
+    - |
+      git clone git://github.com/scikit-build/scikit-ci-addons -b add-addon-ctest-to-junit
+    - |
+      pip install -r ./scikit-ci-addons/requirements.txt
+      pip install ./scikit-ci-addons
+    - |
+      mkdir -p ${CIRCLE_TEST_REPORTS}/CTest
+      (cd case0; ci_addons ctest_junit_formatter $(pwd) > ${CIRCLE_TEST_REPORTS}/CTest/JUnit-${CIRCLE_NODE_INDEX}.xml)
+      (cd case1; ci_addons ctest_junit_formatter $(pwd) > ${CIRCLE_TEST_REPORTS}/CTest/JUnit-1.xml)
 
 deployment:
   nightly:
