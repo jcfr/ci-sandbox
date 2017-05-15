@@ -6,12 +6,17 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 #wget -O ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 unzip "$SCRIPT_DIR/ngrok.zip"
 {
-    mkfifo foo
-    nc -v -lk 8888 0<foo | /bin/bash 1>foo
-    # nc -l -v -p 8888 -e /bin/bash
+    mkfifo pipe
+    echo "Executing nc"
+    nc -l -v 8888 <pipe | bash >pipe
     killall -SIGINT ngrok && echo "ngrok terminated"
 } &
 {
-    ./ngrok tcp 8888 --authtoken=$NGROK_TOKEN --log=stdout --log-level=debug | grep "tcp.ngrok.io" || true
-}
+    echo "Executing ngrok"
+    ./ngrok authtoken $NGROK_TOKEN
+    ./ngrok tcp 8888 --log=stdout --log-level=debug
+} #&
+#{
+#  while true; do echo "Wait"; sleep 1; done
+#}
 
