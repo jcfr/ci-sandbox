@@ -18,10 +18,16 @@ install:
 
 script:
   - echo "script"
-  - git clone git://github.com/scikit-build/scikit-ci-addons -b travis-remote-connect
-  - cd scikit-ci-addons && pip install .
-  - ci_addons --install ../
-  - ../enable-worker-remote-access.sh
+  #- git clone git://github.com/scikit-build/scikit-ci-addons -b travis-remote-connect
+  #- cd scikit-ci-addons && pip install .
+  #- ci_addons --install ../
+  #- ../enable-worker-remote-access.sh
+
+  - |
+   wget https://raw.githubusercontent.com/scikit-build/scikit-ci-addons/travis-remote-connect/travis/enable-worker-remote-access.sh -O ../enable-worker-remote-access.sh
+   chmod u+x ../enable-worker-remote-access.sh
+   ../enable-worker-remote-access.sh
+   
 
 after_success:
   - echo "success"
