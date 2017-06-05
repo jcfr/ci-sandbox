@@ -2,33 +2,39 @@ branches:
  only:
   - master
 
-language: python
+env:
+  global:
+  - secure: "eDe+HOgZHUt7zTPadj7e9TuyP2by9PVQM4ctLnw1IWLoicRdz5tTQv5vvySuL5lk3JstLogNm2vSxOcD7JHaiKyhLtyKsUjZ9/JDUOLk4fGRyf+UwSp7/Giftv4BAmUOkOCfRrkghgh0Tp1kNOBamU223yEbKWF1DyiKyBnTsg3ScWRklrpUHmhRhqa/mfZ+3L3mKYkhkQsfAaxYr4U9M6gDYzZEjz4PDLXMAktdGKYtx3UcEFSlISUxJNfN+5AJykP9PUZ0v2qys+K1aUeNgXMwt1zceORqcCfKQ81GSu5eJ3iUJUQ+061xP/G1z9jKssa1bPfAy9Pz7U4jbzvwl1UvA1kVLi0k6r2TWPDrHecSnswaONBRjusl2p61Lht5IWPUz7OAXhQv09hxRVak0qd/7fU0hWiGxxgqjv0GEMgePURpEBZrREfVVWhoEXCquDmQkWjjW6OwGW5axPaQsIqGByXudcY4XKhrXOB2qwUZYYj8V2MA+TJJOTh7y95hvSBi71858mPgK/AHGDxipEXZxacnKT8f6U/SfHhtUZ5a2pa6yzLARs9fP3TPah3Se1BXSZ9QWriqvb2yC6PHix6EWgOXv1/sVbfy56ySq0Ft4R2nMfHqiOQWeyhlDubyUtZ6x9oVyLKb2Hvn3ZLytJqR/8Gf7Cx+O7hGag2/Pww="
+
+os: osx
+
+language: generic
 
 before_install:
   - echo "before_install"
 
 install:
   - echo "install"
+  - wget https://raw.githubusercontent.com/scikit-build/scikit-ci-addons/master/travis/enable-worker-remote-access.sh -O ../enable-worker-remote-access.sh
+  - chmod u+x ../enable-worker-remote-access.sh
+  - pwd
 
 script:
   - echo "script"
+  #- git clone git://github.com/scikit-build/scikit-ci-addons -b travis-remote-connect
+  #- cd scikit-ci-addons && pip install .
+  #- ci_addons --install ../
+  #- ../enable-worker-remote-access.sh
+   
 
 after_success:
   - echo "success"
+  - ../enable-worker-remote-access.sh
 
-deploy:
-  - provider: script
-    script: pwd && ls && cd /home/travis/build/jcfr/ci-sandbox && echo "deployment-release"
-    skip_cleanup: true
-    on:
-      repo: jcfr/ci-sandbox
-      tags: true
-  - provider: script
-    script: pwd && ls && cd /home/travis/build/jcfr/ci-sandbox && echo "deployment-nightly"
-    skip_cleanup: true
-    on:
-      repo: jcfr/ci-sandbox
-      branch: master
+after_failure:
+  - ../enable-worker-remote-access.sh
+
+
 
 notifications:
   email: false
