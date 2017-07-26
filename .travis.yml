@@ -11,7 +11,11 @@ install:
   - echo "install"
 
 script:
-  - echo "script"
+  - git clone git://github.com/QIICR/dcmqi.git
+  - cd dcmqi
+  - git reset --hard 99bbbbb
+  - git show -s --format="%ci" HEAD
+  - git show -s --format="%cd" --date=local
 
 after_success:
   - echo "success"
