@@ -3,16 +3,30 @@ branches:
   - master
   - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 
-language: python
+
+
+language: cpp
+env:
+- PYENV_VERSION='2.7.15' PYENV_VERSION_STRING='Python 2.7.15'
+
+cache:
+  - directories:
+    - "$HOME/.pyenv_cache"
 
 before_install:
   - echo "before_install"
-
+  - |
+    cd /opt/pyenv && git pull origin master && cd -
+    export PATH=/opt/pyenv/versions/${PYENV_VERSION}/bin:${PATH}
+    pyenv install ${PYENV_VERSION}
+    ls /opt/pyenv/versions/${PYENV_VERSION}/bin
+  - pyenv global ${PYENV_VERSION}
 install:
   - echo "install"
 
 script:
   - echo "script"
+  - python -c "import platform; print(platform.system().lower())"
 
 after_success:
   - echo "success"
