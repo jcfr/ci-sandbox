@@ -1,0 +1,54 @@
+
+initialize-venv: &initialize-venv
+  name: Initialize Virtual Environment
+  command: |
+    python -m virtualenv ../venv || python -m venv ../venv
+    . ../venv/bin/activate
+
+ci-steps: &ci-steps
+  steps:
+    - checkout
+    - run:
+        <<: *initialize-venv
+    - run:
+        name: Install dependencies
+        command: |
+          . ../venv/bin/activate
+          git clone git://github.com/scikit-build/scikit-ci-addons -b master
+          pip install -r ./scikit-ci-addons/requirements.txt
+          pip install ./scikit-ci-addons
+    - run:
+        name: ctest_junit_formatter
+        command: |
+          . ../venv/bin/activate
+          mkdir -p ${CIRCLE_TEST_REPORTS}/CTest
+          (cd case0; ci_addons ctest_junit_formatter $(pwd) > ${CIRCLE_TEST_REPORTS}/CTest/JUnit-${CIRCLE_NODE_INDEX}.xml)
+          (cd case1; ci_addons ctest_junit_formatter $(pwd) > ${CIRCLE_TEST_REPORTS}/CTest/JUnit-1.xml)
+version: 2
+jobs:
+  python27:
+    docker:
+      - image: circleci/python:2.7.15-jessie
+    <<: *ci-steps
+  python35:
+    docker:
+      - image: circleci/python:3.5.5-jessie
+    <<: *ci-steps
+  python36:
+    docker:
+      - image: circleci/python:3.6.6-jessie
+    <<: *ci-steps
+  python37:
+    docker:
+      - image: circleci/python:3.7.0-stretch
+    <<: *ci-steps
+
+workflows:
+  version: 2
+  test-package-publish:
+    jobs:
+      - python27
+      - python35
+      - python36
+      - python37
+
