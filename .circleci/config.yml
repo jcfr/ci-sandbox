@@ -66,19 +66,19 @@ workflows:
   version: 2
   test-package-publish:
     jobs:
-      - python27
+      - python27:
           filters:
             tags:
               only: /.*/
-      - python35
+      - python35:
           filters:
             tags:
               only: /.*/
-      - python36
+      - python36:
           filters:
             tags:
               only: /.*/
-      - python37
+      - python37:
           filters:
             tags:
               only: /.*/
