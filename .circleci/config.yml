@@ -21,9 +21,11 @@ ci-steps: &ci-steps
         name: ctest_junit_formatter
         command: |
           . ../venv/bin/activate
-          mkdir -p ${CIRCLE_TEST_REPORTS}/CTest
-          (cd case0; ci_addons ctest_junit_formatter $(pwd) > ${CIRCLE_TEST_REPORTS}/CTest/JUnit-${CIRCLE_NODE_INDEX}.xml)
-          (cd case1; ci_addons ctest_junit_formatter $(pwd) > ${CIRCLE_TEST_REPORTS}/CTest/JUnit-1.xml)
+          mkdir -p ~/ctest-reports
+          (cd case0; ci_addons ctest_junit_formatter $(pwd) > ~/ctest-reports/JUnit-${CIRCLE_NODE_INDEX}.xml)
+          (cd case1; ci_addons ctest_junit_formatter $(pwd) > ~/ctest-reports/JUnit-1.xml)
+    - store_test_results:
+        path: ~/ctest-reports
 version: 2
 jobs:
   python27:
