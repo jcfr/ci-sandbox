@@ -78,6 +78,10 @@ Submission when ``master`` is updated:
 
 Submission when a tag is pushed:
 
+![](images/circleci-2.0-deploy-release.png)
+
+![](images/circleci-2.0-deploy-release-details.png)
+
 
 ## CircleCI 1.0 (deprecated)
 
