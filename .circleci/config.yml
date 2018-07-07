@@ -67,18 +67,21 @@ workflows:
   test-package-publish:
     jobs:
       - python27
-      - python35
-      - python36
-      - python37
-      - deploy-master:
-          requires:
-            - python27
-            - python35
-            - python36
-            - python37
           filters:
-            branches:
-              only: master
+            tags:
+              only: /.*/
+      - python35
+          filters:
+            tags:
+              only: /.*/
+      - python36
+          filters:
+            tags:
+              only: /.*/
+      - python37
+          filters:
+            tags:
+              only: /.*/
       - deploy-release:
           requires:
             - python27
@@ -90,4 +93,13 @@ workflows:
               only: /^v[0-9]+(\.[0-9]+)*/
             branches:
               ignore: /.*/
+      - deploy-master:
+          requires:
+            - python27
+            - python35
+            - python36
+            - python37
+          filters:
+            branches:
+              only: master
 
