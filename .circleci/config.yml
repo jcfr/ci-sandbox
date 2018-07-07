@@ -45,6 +45,23 @@ jobs:
       - image: circleci/python:3.7.0-stretch
     <<: *ci-steps
 
+  deploy-master:
+    docker:
+      - image: circleci/python:3.7.0-stretch
+    steps:
+    - run:
+        name: Install dependencies
+        command: |
+          echo "Deploy master"
+  deploy-release:
+    docker:
+      - image: circleci/python:3.7.0-stretch
+    steps:
+    - run:
+        name: Install dependencies
+        command: |
+          echo "Deploy release"
+
 workflows:
   version: 2
   test-package-publish:
@@ -53,4 +70,24 @@ workflows:
       - python35
       - python36
       - python37
+      - deploy-master:
+          requires:
+            - python27
+            - python35
+            - python36
+            - python37
+          filters:
+            branches:
+              only: master
+      - deploy-release:
+          requires:
+            - python27
+            - python35
+            - python36
+            - python37
+          filters:
+            tags:
+              only: /[0-9]+(\.[0-9]+)*/
+            branches:
+              ignore: /.*/
 

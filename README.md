@@ -34,7 +34,43 @@ notifications:
 
 # Deployment settings
 
-## CircleCI
+## CircleCI 2.0
+
+* Two deploy jobs:
+  * ``deploy-master``: associated with ``master`` branch
+  * ``deploy-release``: associated with a [tag regular expression](https://circleci.com/docs/configuration/#tags): ``/v[0-9]+\.[0-9]+\.[0-9]+/``
+
+Each jobs depend on all other `pythonXY` jobs.
+
+```
+workflows:
+  version: 2
+  test-package-publish:
+    jobs:
+      [...]
+      - deploy-master:
+          requires:
+            - python27
+            - python35
+            - python36
+            - python37
+          filters:
+            branches:
+              only: master
+      - deploy-release:
+          requires:
+            - python27
+            - python35
+            - python36
+            - python37
+          filters:
+            tags:
+              only: /[0-9]+(\.[0-9]+)*/
+            branches:
+              ignore: /.*/
+```
+
+## CircleCI 1.0 (deprecated)
 
 * Two sections:
   * ``nightly``: associated with ``master`` branch
