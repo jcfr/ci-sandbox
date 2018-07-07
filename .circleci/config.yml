@@ -50,7 +50,7 @@ jobs:
       - image: circleci/python:3.7.0-stretch
     steps:
     - run:
-        name: Install dependencies
+        name: Deploy master
         command: |
           echo "Deploy master"
   deploy-release:
@@ -58,7 +58,7 @@ jobs:
       - image: circleci/python:3.7.0-stretch
     steps:
     - run:
-        name: Install dependencies
+        name: Deploy release
         command: |
           echo "Deploy release"
 

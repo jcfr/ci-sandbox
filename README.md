@@ -70,6 +70,15 @@ workflows:
               ignore: /.*/
 ```
 
+Submission when ``master`` is updated:
+
+![](images/circleci-2.0-deploy-master.png)
+
+![](images/circleci-2.0-deploy-master-details.png)
+
+Submission when a tag is pushed:
+
+
 ## CircleCI 1.0 (deprecated)
 
 * Two sections:
