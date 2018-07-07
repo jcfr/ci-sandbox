@@ -38,7 +38,7 @@ notifications:
 
 * Two deploy jobs:
   * ``deploy-master``: associated with ``master`` branch
-  * ``deploy-release``: associated with a [tag regular expression](https://circleci.com/docs/2.0/configuration-reference/#filters-1): ``/v[0-9]+\.[0-9]+\.[0-9]+/``
+  * ``deploy-release``: associated with a [tag regular expression](https://circleci.com/docs/2.0/configuration-reference/#filters-1): ``/v[0-9]+\.[0-9]+\.[0-9]+/``. See also [Git Tag Job Execution](https://circleci.com/docs/2.0/workflows/#git-tag-job-execution).
 
 Each jobs depend on all other `pythonXY` jobs.
 
