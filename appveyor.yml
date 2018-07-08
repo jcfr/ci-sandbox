@@ -22,6 +22,16 @@ after_test:
 on_finish:
   - echo "on_finish"
 
+deploy_script:
+  - ps: |
+      if ($env:appveyor_repo_tag -eq $true -and $env:appveyor_repo_tag_name –match "^v[0-9]+(\.[0-9]+)*") {
+        Write-Host "deploy release"
+      } elseif ($env:appveyor_repo_branch -eq "master") {
+         Write-Host "deploy master"
+      } else {
+        Write-Host "deploy nothing"
+      }
+
 artifacts:
   # Archive the generated packages in the ci.appveyor.com build report.
   - path: dist\*
