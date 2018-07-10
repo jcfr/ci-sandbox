@@ -1,13 +1,28 @@
+branches:
+  only:
+    - master
+
 version: "0.0.1.{build}"
+
+environment:
+  PYTHON_DIR: "C:\\Python36-x64"
+  PATH: "%PYTHON_DIR%;%PYTHON_DIR%\\Scripts;%PATH%"
 
 init:
   - echo "init"
 
 install:
   - echo "install"
+  - echo "PATH:%PATH%"
+  - echo "PYTHON_DIR:%PYTHON_DIR%"
+  - python --version
+  - dir %PYTHON_DIR%
+  - python -m pip install --disable-pip-version-check --upgrade pip
+  - pip install -U setuptools twine wheel
 
 build_script:
   - echo "build_script"
+  - python setup.py sdist bdist_wheel
 
 test_script:
   - echo "test_script"

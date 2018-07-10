@@ -11,7 +11,18 @@ ci-steps: &ci-steps
     - run:
         <<: *initialize-venv
     - run:
-        name: Install dependencies
+        name: Install "PyPI upload" distribution dependencies
+        command: |
+          . ../venv/bin/activate
+          python -m pip install --disable-pip-version-check --upgrade pip
+          pip install -U setuptools twine wheel
+    - run:
+        name: Build "PyPI upload" distribution 
+        command: |
+          . ../venv/bin/activate
+          python setup.py sdist bdist_wheel
+    - run:
+        name: install ctest_junit_formatter prerequisites
         command: |
           . ../venv/bin/activate
           git clone git://github.com/scikit-build/scikit-ci-addons -b master

@@ -4,15 +4,20 @@ branches:
   - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 
 language: python
+python:
+  - "3.6"
 
 before_install:
   - echo "before_install"
+  - python -m pip install --disable-pip-version-check --upgrade pip
+  - pip install -U setuptools twine wheel
 
 install:
   - echo "install"
 
 script:
   - echo "script"
+  - python setup.py sdist bdist_wheel
 
 after_success:
   - echo "success"
