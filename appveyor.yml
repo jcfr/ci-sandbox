@@ -7,6 +7,7 @@ version: "0.0.1.{build}"
 environment:
   PYTHON_DIR: "C:\\Python36-x64"
   PATH: "%PYTHON_DIR%;%PYTHON_DIR%\\Scripts;%PATH%"
+  BLOCK: "1"
 
 init:
   - echo "init"
@@ -19,6 +20,8 @@ install:
   - dir %PYTHON_DIR%
   - python -m pip install --disable-pip-version-check --upgrade pip
   - pip install -U setuptools twine wheel
+  - pip install -U scikit-ci-addons
+  - ci_addons --install ../addons
 
 build_script:
   - echo "build_script"
@@ -32,6 +35,7 @@ after_test:
 
 on_finish:
   - echo "on_finish"
+  - ps: ../addons/appveyor/enable-worker-remote-access.ps1 -check_for_block
 
 deploy_script:
   - ps: |
