@@ -7,7 +7,7 @@ version: "0.0.1.{build}"
 environment:
   PYTHON_DIR: "C:\\Python36-x64"
   PATH: "%PYTHON_DIR%;%PYTHON_DIR%\\Scripts;%PATH%"
-  BLOCK: "1"
+  BLOCK: "0"
 
 init:
   - echo "init"
@@ -17,6 +17,7 @@ install:
   - echo "PATH:%PATH%"
   - echo "PYTHON_DIR:%PYTHON_DIR%"
   - python --version
+  - python -c "import locale; print(locale.getpreferredencoding())"
   - dir %PYTHON_DIR%
   - python -m pip install --disable-pip-version-check --upgrade pip
   - pip install -U setuptools twine wheel
