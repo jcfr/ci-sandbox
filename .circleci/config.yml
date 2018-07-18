@@ -72,6 +72,11 @@ jobs:
         name: Deploy release
         command: |
           echo "Deploy release"
+          python -m venv ../venv
+          . ../venv/bin/activate
+          pip install twine
+          ls dist
+          twine upload -u $PYPI_USER -p $PYPI_PASSWORD --repository-url https://test.pypi.org/legacy/ dist/*
 
 workflows:
   version: 2
