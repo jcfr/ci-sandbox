@@ -15,6 +15,12 @@ references:
       - run:
           name: Install "PyPI upload" distribution dependencies
           command: |
+            . ../venv/bin/activate
+            python -m pip install --disable-pip-version-check --upgrade pip
+            pip install -U setuptools twine wheel
+      - run:
+          name: Build "PyPI upload" distribution
+          command: |
             #
             # Set UPLOAD_SDIST environment variable
             #
@@ -24,18 +30,15 @@ references:
             # Run CI
             #
             . ../venv/bin/activate
-            python -m pip install --disable-pip-version-check --upgrade pip
-            pip install -U setuptools twine wheel
+            python setup.py sdist bdist_wheel
+            #
+            # if it applies, remove source distribution
+            #
             if [[ $UPLOAD_SDIST == "" ]]
             then
               echo "Deleting source distribution"
               rm -f dist/*.tar.gz
             fi
-      - run:
-          name: Build "PyPI upload" distribution 
-          command: |
-            . ../venv/bin/activate
-            python setup.py sdist bdist_wheel
       - run:
           name: install ctest_junit_formatter prerequisites
           command: |
