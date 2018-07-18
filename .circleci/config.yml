@@ -37,6 +37,10 @@ ci-steps: &ci-steps
           (cd case1; ci_addons ctest_junit_formatter $(pwd) > ~/ctest-reports/JUnit-1.xml)
     - store_test_results:
         path: ~/ctest-reports
+    - persist_to_workspace:
+        root: ./
+        paths:
+          - dist
 version: 2
 jobs:
   python27:
@@ -60,14 +64,19 @@ jobs:
     docker:
       - image: circleci/python:3.7.0-stretch
     steps:
+    - attach_workspace:
+        at: ./
     - run:
         name: Deploy master
         command: |
           echo "Deploy master"
+          ls dist
   deploy-release:
     docker:
       - image: circleci/python:3.7.0-stretch
     steps:
+    - attach_workspace:
+        at: ./
     - run:
         name: Deploy release
         command: |
