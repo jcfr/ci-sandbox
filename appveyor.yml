@@ -49,6 +49,7 @@ deploy_script:
         twine upload -u %PYPI_USER% -p %PYPI_PASSWORD% --repository-url https://test.pypi.org/legacy/ dist/*
       } elseif ($env:appveyor_repo_branch -eq "master") {
          Write-Host "deploy master"
+         dir dist
       } else {
         Write-Host "deploy nothing"
       }
