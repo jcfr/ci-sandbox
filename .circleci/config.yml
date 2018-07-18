@@ -1,46 +1,49 @@
 
-initialize-venv: &initialize-venv
-  name: Initialize Virtual Environment
-  command: |
-    python -m virtualenv ../venv || python -m venv ../venv
-    . ../venv/bin/activate
+references:
 
-ci-steps: &ci-steps
-  steps:
-    - checkout
-    - run:
-        <<: *initialize-venv
-    - run:
-        name: Install "PyPI upload" distribution dependencies
-        command: |
-          . ../venv/bin/activate
-          python -m pip install --disable-pip-version-check --upgrade pip
-          pip install -U setuptools twine wheel
-    - run:
-        name: Build "PyPI upload" distribution 
-        command: |
-          . ../venv/bin/activate
-          python setup.py sdist bdist_wheel
-    - run:
-        name: install ctest_junit_formatter prerequisites
-        command: |
-          . ../venv/bin/activate
-          git clone git://github.com/scikit-build/scikit-ci-addons -b master
-          pip install -r ./scikit-ci-addons/requirements.txt
-          pip install ./scikit-ci-addons
-    - run:
-        name: ctest_junit_formatter
-        command: |
-          . ../venv/bin/activate
-          mkdir -p ~/ctest-reports
-          (cd case0; ci_addons ctest_junit_formatter $(pwd) > ~/ctest-reports/JUnit-${CIRCLE_NODE_INDEX}.xml)
-          (cd case1; ci_addons ctest_junit_formatter $(pwd) > ~/ctest-reports/JUnit-1.xml)
-    - store_test_results:
-        path: ~/ctest-reports
-    - persist_to_workspace:
-        root: ./
-        paths:
-          - dist
+  initialize-venv: &initialize-venv
+    name: Initialize Virtual Environment
+    command: |
+      python -m virtualenv ../venv || python -m venv ../venv
+      . ../venv/bin/activate
+
+  ci-steps: &ci-steps
+    steps:
+      - checkout
+      - run:
+          <<: *initialize-venv
+      - run:
+          name: Install "PyPI upload" distribution dependencies
+          command: |
+            . ../venv/bin/activate
+            python -m pip install --disable-pip-version-check --upgrade pip
+            pip install -U setuptools twine wheel
+      - run:
+          name: Build "PyPI upload" distribution 
+          command: |
+            . ../venv/bin/activate
+            python setup.py sdist bdist_wheel
+      - run:
+          name: install ctest_junit_formatter prerequisites
+          command: |
+            . ../venv/bin/activate
+            git clone git://github.com/scikit-build/scikit-ci-addons -b master
+            pip install -r ./scikit-ci-addons/requirements.txt
+            pip install ./scikit-ci-addons
+      - run:
+          name: ctest_junit_formatter
+          command: |
+            . ../venv/bin/activate
+            mkdir -p ~/ctest-reports
+            (cd case0; ci_addons ctest_junit_formatter $(pwd) > ~/ctest-reports/JUnit-${CIRCLE_NODE_INDEX}.xml)
+            (cd case1; ci_addons ctest_junit_formatter $(pwd) > ~/ctest-reports/JUnit-1.xml)
+      - store_test_results:
+          path: ~/ctest-reports
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - dist
+
 version: 2
 jobs:
   python27:
