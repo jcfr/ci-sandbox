@@ -15,9 +15,22 @@ references:
       - run:
           name: Install "PyPI upload" distribution dependencies
           command: |
+            #
+            # Set UPLOAD_SDIST environment variable
+            #
+            export UPLOAD_SDIST=$(echo ${CIRCLE_JOB} | cut -d"_" -f2)
+            echo "UPLOAD_SDIST [${UPLOAD_SDIST}]"
+            #
+            # Run CI
+            #
             . ../venv/bin/activate
             python -m pip install --disable-pip-version-check --upgrade pip
             pip install -U setuptools twine wheel
+            if [[ $UPLOAD_SDIST == "" ]]
+            then
+              echo "Deleting source distribution"
+              rm -f dist/*.tar.gz
+            fi
       - run:
           name: Build "PyPI upload" distribution 
           command: |
@@ -44,6 +57,11 @@ references:
           paths:
             - dist
 
+  no_filters: &no_filters
+    filters:
+      tags:
+        only: /.*/
+
 version: 2
 jobs:
   python27:
@@ -58,7 +76,7 @@ jobs:
     docker:
       - image: circleci/python:3.6.6-jessie
     <<: *ci-steps
-  python37:
+  python37_upload-sdist:
     docker:
       - image: circleci/python:3.7.0-stretch
     <<: *ci-steps
@@ -95,27 +113,19 @@ workflows:
   test-package-publish:
     jobs:
       - python27:
-          filters:
-            tags:
-              only: /.*/
+          <<: *no_filters
       - python35:
-          filters:
-            tags:
-              only: /.*/
+          <<: *no_filters
       - python36:
-          filters:
-            tags:
-              only: /.*/
-      - python37:
-          filters:
-            tags:
-              only: /.*/
+          <<: *no_filters
+      - python37_upload-sdist:
+          <<: *no_filters
       - deploy-release:
           requires:
             - python27
             - python35
             - python36
-            - python37
+            - python37_upload-sdist
           filters:
             tags:
               only: /^v[0-9]+(\.[0-9]+)*/
@@ -126,7 +136,7 @@ workflows:
             - python27
             - python35
             - python36
-            - python37
+            - python37_upload-sdist
           filters:
             branches:
               only: master
