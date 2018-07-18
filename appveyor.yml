@@ -18,7 +18,6 @@ install:
   - echo "PYTHON_DIR:%PYTHON_DIR%"
   - python --version
   - python -c "import locale; print(locale.getpreferredencoding())"
-  - python -c "print(open('data.txt').readlines()[0])"
   - dir %PYTHON_DIR%
   - python -m pip install --disable-pip-version-check --upgrade pip
   - pip install -U setuptools twine wheel
