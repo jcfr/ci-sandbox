@@ -9,7 +9,7 @@ class BinaryDistribution(Distribution):
 
 setup(
     name="jcfr_pypi_upload_automation_sandbox",
-    version="0.10.0",
+    version="0.11.0",
     description="this package is used only to test automation of upload to Python Package Index (PyPI)",
     author='jcfr',
     license='Apache 2.0',
