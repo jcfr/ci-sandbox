@@ -1,3 +1,4 @@
+version: 2
 
 references:
 
@@ -24,7 +25,7 @@ references:
             #
             # Set UPLOAD_SDIST environment variable
             #
-            export UPLOAD_SDIST=$(echo ${CIRCLE_JOB} | cut -d"_" -f2)
+            export UPLOAD_SDIST=$(echo ${CIRCLE_JOB} | cut -d"_" -s -f2)
             echo "UPLOAD_SDIST [${UPLOAD_SDIST}]"
             #
             # Run CI
@@ -65,7 +66,6 @@ references:
       tags:
         only: /.*/
 
-version: 2
 jobs:
   python27:
     docker:
