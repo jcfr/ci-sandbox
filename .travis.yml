@@ -48,7 +48,7 @@ deploy:
       repo: ${TRAVIS_REPO_SLUG}
       tags: true
   - provider: script
-    script: pwd && ls && echo "deployment-nightly"
+    script: pwd && ls dist && echo "deployment-nightly"
     skip_cleanup: true
     on:
       repo: ${TRAVIS_REPO_SLUG}
