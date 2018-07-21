@@ -13,6 +13,6 @@ setup(
     description="this package is used only to test automation of upload to Python Package Index (PyPI)",
     author='jcfr',
     license='Apache 2.0',
-    py_modules=['pypi_upload_automation_sandbox'],
+    packages=['pypi_upload_automation_sandbox'],
     distclass=BinaryDistribution
 )
