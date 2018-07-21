@@ -1,4 +1,6 @@
 
+import versioneer
+
 from setuptools.dist import Distribution
 from setuptools import setup
 
@@ -9,7 +11,8 @@ class BinaryDistribution(Distribution):
 
 setup(
     name="jcfr_pypi_upload_automation_sandbox",
-    version="0.11.0",
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description="this package is used only to test automation of upload to Python Package Index (PyPI)",
     author='jcfr',
     license='Apache 2.0',

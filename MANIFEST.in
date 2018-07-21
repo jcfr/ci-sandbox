@@ -1,0 +1,2 @@
+include versioneer.py
+include pypi_upload_automation_sandbox/_version.py
