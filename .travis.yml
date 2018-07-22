@@ -17,40 +17,23 @@ cache:
     - $HOME/.pyenv/versions/3.7.0
 
 before_install:
-  - echo "before_install"
-  - echo "PATH [${PATH}]"
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mkdir $HOME/bin; ln -s $(which pip2) $HOME/bin/pip; ln -s $(which python2) $HOME/bin/python; fi
   - python -m pip install --disable-pip-version-check --upgrade pip
-  - pip install -U scikit-ci-addons
+  - pip install -U scikit-ci scikit-ci-addons
   - ci_addons --install ../addons
 
 install:
-  - echo "install"
-  - |
-    python ../addons/travis/install_pyenv.py
-    export PATH=${HOME}/.pyenv/versions/${PYTHON_VERSION}/bin:${PATH}
-    pip install wheel
+  - ci install
 
 script:
-  - echo "script"
-  - |
-    export PATH=${HOME}/.pyenv/versions/${PYTHON_VERSION}/bin:${PATH}
-    python setup.py sdist bdist_wheel
-    #
-    # if it applies, remove source distribution
-    #
-    if [[ $UPLOAD_SDIST == "" ]]
-    then
-      echo "Deleting source distribution"
-      rm -f dist/*.tar.gz
-    fi
+  - ci test
 
 after_success:
-  - echo "success"
+  - ci after_test
 
 deploy:
   - provider: script
-    script: pwd && ls dist;echo "deploy-release" && pip install twine && twine upload -u $PYPI_USER -p $PYPI_PASSWORD --repository-url https://test.pypi.org/legacy/ dist/*
+    script: pwd && ls dist;which pip;echo "deploy-release" && pip install twine && twine upload -u $PYPI_USER -p $PYPI_PASSWORD --repository-url https://test.pypi.org/legacy/ --skip-existing dist/*
     skip_cleanup: true
     on:
       repo: ${TRAVIS_REPO_SLUG}
