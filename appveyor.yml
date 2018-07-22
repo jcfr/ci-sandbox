@@ -31,6 +31,14 @@ install:
 build_script:
   - echo "build_script"
   - python setup.py sdist bdist_wheel
+  - ps: |
+      #
+      # if it applies, remove source distribution
+      #
+      if ($env:UPLOAD_SDIST -eq "") {
+        Write-Host "Deleting source distribution"
+        Remove-Item –path dist/*.tar.gz
+      }
 
 test_script:
   - echo "test_script"

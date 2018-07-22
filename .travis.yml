@@ -36,6 +36,14 @@ script:
   - |
     export PATH=${HOME}/.pyenv/versions/${PYTHON_VERSION}/bin:${PATH}
     python setup.py sdist bdist_wheel
+    #
+    # if it applies, remove source distribution
+    #
+    if [[ $UPLOAD_SDIST == "" ]]
+    then
+      echo "Deleting source distribution"
+      rm -f dist/*.tar.gz
+    fi
 
 after_success:
   - echo "success"
