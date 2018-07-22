@@ -10,9 +10,9 @@ environment:
   PATH: "%PYTHON_DIR%;%PYTHON_DIR%\\Scripts;%PATH%"
   BLOCK: "0"
   PYPI_USER:
-    secure: FSD2hc+aSqlOLncSKl12Dw==
+    secure: UGVCrlMzqZYEKC4ukxwT9g==
   PYPI_PASSWORD:
-    secure: Njw5/Y55cp561BNOqvff/amo5ZeHTMggWoSaVpvE51c=
+    secure: meCzpEOhlwp5AZazjODrkVU+u9xn4uvGKGfwEMsncqM=
 
 init:
   - echo "init"
