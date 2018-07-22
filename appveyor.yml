@@ -35,7 +35,7 @@ build_script:
       #
       # if it applies, remove source distribution
       #
-      if ($env:UPLOAD_SDIST -eq "") {
+      if (!$env:UPLOAD_SDIST) {
         Write-Host "Deleting source distribution"
         Remove-Item –path dist/*.tar.gz
       }
