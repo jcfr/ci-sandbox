@@ -2,35 +2,27 @@ version: 2
 
 references:
 
-  initialize-venv: &initialize-venv
-    name: Initialize Virtual Environment
-    command: |
-      python -m virtualenv ../venv || python -m venv ../venv
-      . ../venv/bin/activate
-
-  ci-steps: &ci-steps
+  ci_steps: &ci_steps
+    working_directory: /work
     steps:
       - checkout
       - run:
-          <<: *initialize-venv
-      - run:
-          name: Install "PyPI upload" distribution dependencies
-          command: |
-            . ../venv/bin/activate
-            python -m pip install --disable-pip-version-check --upgrade pip
-            pip install -U setuptools twine wheel
-      - run:
-          name: Build "PyPI upload" distribution
+          name: Run CI
           command: |
             #
             # Set UPLOAD_SDIST environment variable
             #
-            export UPLOAD_SDIST=$(echo ${CIRCLE_JOB} | cut -d"_" -s -f2)
+            export UPLOAD_SDIST=$(echo ${CIRCLE_JOB} | cut -d"_" -f3)
             echo "UPLOAD_SDIST [${UPLOAD_SDIST}]"
             #
-            # Run CI
+            # Set MANYLINUX_PYTHON
             #
-            . ../venv/bin/activate
+            export MANYLINUX_PYTHON=$(echo ${CIRCLE_JOB} | cut -d"_" -f2)
+            echo "MANYLINUX_PYTHON [${MANYLINUX_PYTHON}]"
+            #
+            # Build sdist and wheel
+            #
+            export PATH=/opt/python/${MANYLINUX_PYTHON}/bin:${PATH}
             python setup.py sdist bdist_wheel
             #
             # if it applies, remove source distribution
@@ -40,6 +32,10 @@ references:
               echo "Deleting source distribution"
               rm -f dist/*.tar.gz
             fi
+      - run:
+          name: Repair wheels
+          command: |
+            export PATH=/opt/python/${MANYLINUX_PYTHON}/bin:${PATH}
             # Since there are no external shared libraries to bundle into the wheels
             # this step will fixup the wheel switching from 'linux' to 'manylinux1' tag
             pip install auditwheel
@@ -48,25 +44,31 @@ references:
                 rm $whl
             done
       - run:
-          name: install ctest_junit_formatter prerequisites
+          name: install "ctest_junit_formatter" prerequisites
           command: |
-            . ../venv/bin/activate
+            export PATH=/opt/python/${MANYLINUX_PYTHON}/bin:${PATH}
             git clone git://github.com/scikit-build/scikit-ci-addons -b master
             pip install -r ./scikit-ci-addons/requirements.txt
             pip install ./scikit-ci-addons
       - run:
-          name: ctest_junit_formatter
+          name: run "ctest_junit_formatter"
           command: |
-            . ../venv/bin/activate
+            export PATH=/opt/python/${MANYLINUX_PYTHON}/bin:${PATH}
             mkdir -p ~/ctest-reports
             (cd case0; ci_addons ctest_junit_formatter $(pwd) > ~/ctest-reports/JUnit-${CIRCLE_NODE_INDEX}.xml)
             (cd case1; ci_addons ctest_junit_formatter $(pwd) > ~/ctest-reports/JUnit-1.xml)
       - store_test_results:
           path: ~/ctest-reports
+
       - persist_to_workspace:
           root: ./
           paths:
             - dist
+
+  x64_build_job: &x64_build_job
+    docker:
+      - image: dockcross/manylinux-x64
+    <<: *ci_steps
 
   no_filters: &no_filters
     filters:
@@ -74,80 +76,98 @@ references:
         only: /.*/
 
 jobs:
-  python27:
-    docker:
-      - image: circleci/python:2.7.15-jessie
-    <<: *ci-steps
-  python35:
-    docker:
-      - image: circleci/python:3.5.5-jessie
-    <<: *ci-steps
-  python36:
-    docker:
-      - image: circleci/python:3.6.6-jessie
-    <<: *ci-steps
-  python37_upload-sdist:
-    docker:
-      - image: circleci/python:3.7.0-stretch
-    <<: *ci-steps
+
+  # x64
+  manylinux-x64_cp27-cp27m:
+    <<: *x64_build_job
+  manylinux-x64_cp27-cp27mu:
+    <<: *x64_build_job
+  manylinux-x64_cp34-cp34m:
+    <<: *x64_build_job
+  manylinux-x64_cp35-cp35m:
+    <<: *x64_build_job
+  manylinux-x64_cp36-cp36m:
+    <<: *x64_build_job
+  manylinux-x64_cp37-cp37m_upload-sdist:
+    <<: *x64_build_job
+
+  # x86
+  # NA
 
   deploy-master:
     docker:
       - image: circleci/python:3.7.0-stretch
     steps:
-    - attach_workspace:
-        at: ./
-    - run:
-        name: Deploy master
-        command: |
-          echo "Deploy master"
-          ls dist
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Deploy master
+          command: |
+            echo "Deploy master (not implemented)"
+
   deploy-release:
     docker:
       - image: circleci/python:3.7.0-stretch
     steps:
-    - attach_workspace:
-        at: ./
-    - run:
-        name: Deploy release
-        command: |
-          echo "Deploy release"
-          python -m venv ../venv
-          . ../venv/bin/activate
-          pip install twine
-          ls dist
-          twine upload -u $PYPI_USER -p $PYPI_PASSWORD --repository-url https://test.pypi.org/legacy/ dist/*
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Deploy release
+          command: |
+            echo "Deploy release"
+            python -m venv ../venv
+            . ../venv/bin/activate
+            pip install twine
+            ls dist
+            twine upload -u $PYPI_USER -p $PYPI_PASSWORD --repository-url https://test.pypi.org/legacy/ dist/*
 
 workflows:
   version: 2
-  test-package-publish:
+  build-test-deploy:
     jobs:
-      - python27:
+      # x64
+      - manylinux-x64_cp27-cp27m:
           <<: *no_filters
-      - python35:
+      - manylinux-x64_cp27-cp27mu:
           <<: *no_filters
-      - python36:
+      - manylinux-x64_cp34-cp34m:
           <<: *no_filters
-      - python37_upload-sdist:
+      - manylinux-x64_cp35-cp35m:
           <<: *no_filters
+      - manylinux-x64_cp36-cp36m:
+          <<: *no_filters
+      - manylinux-x64_cp37-cp37m_upload-sdist:
+          <<: *no_filters
+      # x86
+      # NA
+
+      - deploy-master:
+          requires:
+            # x64
+            - manylinux-x64_cp27-cp27m
+            - manylinux-x64_cp27-cp27mu
+            - manylinux-x64_cp34-cp34m
+            - manylinux-x64_cp35-cp35m
+            - manylinux-x64_cp36-cp36m
+            - manylinux-x64_cp37-cp37m_upload-sdist
+            # x86
+            # NA
+          filters:
+            branches:
+              only: master
       - deploy-release:
           requires:
-            - python27
-            - python35
-            - python36
-            - python37_upload-sdist
+            # x64
+            - manylinux-x64_cp27-cp27m
+            - manylinux-x64_cp27-cp27mu
+            - manylinux-x64_cp34-cp34m
+            - manylinux-x64_cp35-cp35m
+            - manylinux-x64_cp36-cp36m
+            - manylinux-x64_cp37-cp37m_upload-sdist
+            # x86
+            # NA
           filters:
             tags:
               only: /^v[0-9]+(\.[0-9]+)*/
             branches:
               ignore: /.*/
-      - deploy-master:
-          requires:
-            - python27
-            - python35
-            - python36
-            - python37_upload-sdist
-          filters:
-            branches:
-              only: master
-
