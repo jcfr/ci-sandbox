@@ -17,7 +17,7 @@ cache:
     - $HOME/.pyenv/versions/3.7.0
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mkdir $HOME/bin; ln -s $(which pip3) $HOME/bin/pip; ln -s $(which python3) $HOME/bin/python; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mkdir $HOME/bin; ln -s $(which pip2) $HOME/bin/pip; ln -s $(which python2) $HOME/bin/python; fi
   - python -m pip install --disable-pip-version-check --upgrade pip
   - pip install -U scikit-ci scikit-ci-addons
   - ci_addons --install ../addons
@@ -33,7 +33,7 @@ after_success:
 
 deploy:
   - provider: script
-    script: pwd && ls dist;which pip;echo "deploy-release" && pip install twine && twine upload -u $PYPI_USER -p $PYPI_PASSWORD --repository-url https://test.pypi.org/legacy/ --skip-existing dist/*
+    script: pwd && ls dist;echo "deploy-release" && ~/.pyenv/versions/${PYTHON_VERSION}/bin/twine upload -u $PYPI_USER -p $PYPI_PASSWORD --repository-url https://test.pypi.org/legacy/ --skip-existing dist/*
     skip_cleanup: true
     on:
       repo: ${TRAVIS_REPO_SLUG}
