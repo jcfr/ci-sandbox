@@ -35,6 +35,12 @@ references:
       - run:
           name: Repair wheels
           command: |
+            #
+            # Set MANYLINUX_PYTHON
+            #
+            export MANYLINUX_PYTHON=$(echo ${CIRCLE_JOB} | cut -d"_" -f2)
+            echo "MANYLINUX_PYTHON [${MANYLINUX_PYTHON}]"
+            #
             export PATH=/opt/python/${MANYLINUX_PYTHON}/bin:${PATH}
             # Since there are no external shared libraries to bundle into the wheels
             # this step will fixup the wheel switching from 'linux' to 'manylinux1' tag
@@ -46,6 +52,12 @@ references:
       - run:
           name: install "ctest_junit_formatter" prerequisites
           command: |
+            #
+            # Set MANYLINUX_PYTHON
+            #
+            export MANYLINUX_PYTHON=$(echo ${CIRCLE_JOB} | cut -d"_" -f2)
+            echo "MANYLINUX_PYTHON [${MANYLINUX_PYTHON}]"
+            #
             export PATH=/opt/python/${MANYLINUX_PYTHON}/bin:${PATH}
             git clone git://github.com/scikit-build/scikit-ci-addons -b master
             pip install -r ./scikit-ci-addons/requirements.txt
@@ -53,6 +65,12 @@ references:
       - run:
           name: run "ctest_junit_formatter"
           command: |
+            #
+            # Set MANYLINUX_PYTHON
+            #
+            export MANYLINUX_PYTHON=$(echo ${CIRCLE_JOB} | cut -d"_" -f2)
+            echo "MANYLINUX_PYTHON [${MANYLINUX_PYTHON}]"
+            #
             export PATH=/opt/python/${MANYLINUX_PYTHON}/bin:${PATH}
             mkdir -p ~/ctest-reports
             (cd case0; ci_addons ctest_junit_formatter $(pwd) > ~/ctest-reports/JUnit-${CIRCLE_NODE_INDEX}.xml)
