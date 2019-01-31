@@ -46,10 +46,12 @@ references:
       - image: dockcross/manylinux-x64
     <<: *ci_steps
 
-  no_filters: &no_filters
+  build_job_filters: &build_job_filters
     filters:
       tags:
-        only: /.*/
+        ignore:
+          - latest
+          - latest-tmp
 
 jobs:
 
@@ -103,17 +105,17 @@ workflows:
     jobs:
       # x64
       - manylinux-x64_cp27-cp27m:
-          <<: *no_filters
+          <<: *build_job_filters
       - manylinux-x64_cp27-cp27mu:
-          <<: *no_filters
+          <<: *build_job_filters
       - manylinux-x64_cp34-cp34m:
-          <<: *no_filters
+          <<: *build_job_filters
       - manylinux-x64_cp35-cp35m:
-          <<: *no_filters
+          <<: *build_job_filters
       - manylinux-x64_cp36-cp36m:
-          <<: *no_filters
+          <<: *build_job_filters
       - manylinux-x64_cp37-cp37m_upload-sdist:
-          <<: *no_filters
+          <<: *build_job_filters
       # x86
       # NA
 
