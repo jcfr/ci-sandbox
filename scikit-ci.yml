@@ -60,6 +60,4 @@ build:
 
 after_test:
   commands:
-    - python: |
-              import os, subprocess
-              subprocess.check_call("codecov -X gcov --required --file ./tests/coverage.xml", shell=True)
+    - codecov -X gcov --required --file ./tests/coverage.xml
