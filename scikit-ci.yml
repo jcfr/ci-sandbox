@@ -58,7 +58,11 @@ build:
 #  commands:
 #    - python setup.py test
 
-#after_test:
-#  commands:
-#    - codecov -X gcov --required --file ./tests/coverage.xml
-
+after_test:
+  commands:
+    - python: |
+              import os, subprocess
+              if 'CODECOV_TOKEN' in os.environ:
+                  subprocess.check_call("codecov -X gcov --required --file ./tests/coverage.xml", shell=True)
+              else:
+                  print("Skipping codecov: CODECOV_TOKEN env. variable is not set")
