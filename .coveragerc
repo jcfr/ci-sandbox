@@ -1,0 +1,7 @@
+[run]
+branch = True
+source = pypi_upload_automation_sandbox
+omit = pypi_upload_automation_sandbox/_version.py
+
+[xml]
+output = tests/coverage.xml

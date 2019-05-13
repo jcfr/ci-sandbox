@@ -1,3 +1,7 @@
+codecov
+coverage
+pytest
+pytest-cov
 setuptools
 twine
 wheel
