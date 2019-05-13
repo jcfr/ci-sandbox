@@ -2,9 +2,22 @@
 
 My sandbox for experimenting with CI services.
 
-|              | CircleCI                                                                                                       | TravisCI                                                                                                      | Appveyor                                                                                                                              | Azure Pipelines |
-|--------------|----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Build Status | [![Circle CI](https://circleci.com/gh/jcfr/ci-sandbox.svg?style=svg)](https://circleci.com/gh/jcfr/ci-sandbox) | [![TravisCI](https://travis-ci.org/jcfr/ci-sandbox.svg?branch=master)](https://travis-ci.org/jcfr/ci-sandbox) | [![Appveyor](https://ci.appveyor.com/api/projects/status/81c2532cyie43bhu?svg=true)](https://ci.appveyor.com/project/jcfr/ci-sandbox) | [![Build Status](https://dev.azure.com/74forever/ci-sandbox/_apis/build/status/jcfr.ci-sandbox?branchName=master)](https://dev.azure.com/74forever/ci-sandbox/_build/latest?definitionId=1&branchName=master) |
+|              | CircleCI                                  | TravisCI                                 | Appveyor                                     | Azure Pipelines                                              |
+|--------------|-------------------------------------------|------------------------------------------|----------------------------------------------|--------------------------------------------------------------|
+| Build Status | [![Circle CI][circle-img]][circle-status] | [![TravisCI][travis-img]][travis-status] | [![Appveyor][appveyor-img]][appveyor-status] | [![Build Status][azure-pipeline-img]][azure-pipeline-status] |
+
+
+[circle-img]: https://circleci.com/gh/jcfr/ci-sandbox.svg?style=svg
+[circle-status]: https://circleci.com/gh/jcfr/ci-sandbox
+
+[travis-img]: https://travis-ci.org/jcfr/ci-sandbox.svg?branch=master 
+[travis-status]: https://travis-ci.org/jcfr/ci-sandbox
+
+[appveyor-img]: https://ci.appveyor.com/api/projects/status/81c2532cyie43bhu?svg=true
+[appveyor-status]: https://ci.appveyor.com/project/jcfr/ci-sandbox
+
+[azure-pipeline-img]: https://dev.azure.com/74forever/ci-sandbox/_apis/build/status/jcfr.ci-sandbox?branchName=master
+[azure-pipeline-status]: https://dev.azure.com/74forever/ci-sandbox/_build/latest?definitionId=1&branchName=master
 
 
 # Disable all notifications
