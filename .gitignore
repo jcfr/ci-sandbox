@@ -7,3 +7,10 @@
 *.egg-info
 dist
 build
+
+# Unit test / coverage reports
+.cache
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov

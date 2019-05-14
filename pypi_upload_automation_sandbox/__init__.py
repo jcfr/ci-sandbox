@@ -2,7 +2,7 @@
 """
 
 def what():
-    print(__doc__.strip())
+    return __doc__.strip()
 
 
 from ._version import get_versions

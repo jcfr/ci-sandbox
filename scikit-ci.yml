@@ -58,7 +58,9 @@ build:
 #  commands:
 #    - python setup.py test
 
-#after_test:
-#  commands:
-#    - codecov -X gcov --required --file ./tests/coverage.xml
-
+after_test:
+  commands:
+    - python: |
+              import os
+              print("CODECOV_TOKEN is '%s'" % os.environ['CODECOV_TOKEN'])
+    - codecov -X gcov --required --file ./tests/coverage.xml

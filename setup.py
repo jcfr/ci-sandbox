@@ -1,4 +1,6 @@
 
+import sys
+
 import versioneer
 
 from setuptools.dist import Distribution
@@ -9,6 +11,16 @@ class BinaryDistribution(Distribution):
     def has_ext_modules(self):
         return True
 
+with open('requirements-dev.txt', 'r') as fp:
+    dev_requirements = list(filter(bool, (line.strip() for line in fp)))
+
+# Require pytest-runner only when running tests
+pytest_runner = (['pytest-runner>=2.9']
+                 if any(arg in sys.argv for arg in ('pytest', 'test'))
+                 else [])
+
+setup_requires = pytest_runner
+
 setup(
     name="jcfr_pypi_upload_automation_sandbox",
     version=versioneer.get_version(),
@@ -17,5 +29,7 @@ setup(
     author='jcfr',
     license='Apache 2.0',
     packages=['pypi_upload_automation_sandbox'],
-    distclass=BinaryDistribution
+    distclass=BinaryDistribution,
+    tests_require=dev_requirements,
+    setup_requires=setup_requires
 )
