@@ -7,14 +7,21 @@ language: python
 
 matrix:
   include:
+
     - os: osx
       language: generic
       env:
-        - PYTHON_VERSION=3.7.0
+        - PYTHON_VERSION=3.7.4
+
+    - os: osx
+      language: generic
+      env:
+        - PYTHON_VERSION=2.7.15
 
 cache:
   directories:
-    - $HOME/.pyenv/versions/3.7.0
+    - $HOME/.pyenv/versions/3.7.4
+    - $HOME/.pyenv/versions/2.7.15
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mkdir $HOME/bin; ln -s $(which pip2) $HOME/bin/pip; ln -s $(which python2) $HOME/bin/python; fi
