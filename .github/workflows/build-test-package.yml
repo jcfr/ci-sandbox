@@ -47,6 +47,9 @@ jobs:
       max-parallel: 2
       matrix:
         python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
+        include:
+          - SETUP_BDIST_WHEEL_ARGS: "--plat-name macosx-10.6-x86_64"
+          - SETUP_CMAKE_ARGS:
 
     steps:
     - uses: actions/checkout@v2
@@ -56,97 +59,67 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Display Python version
-      run: python -c "import sys; print(sys.version)"
-
-    - name: Display pip version
-      run: pip --version
+    - name: Display Python and pip versions
+      run: |
+        python -c "import sys; print(sys.version)"
+        pip --version
 
     - name: Install Prerequisites
       run: |
-        python -m pip install --disable-pip-version-check --upgrade pip
         pip install git+https://github.com/jcfr/wheeltools.git@wheeltools-2018-10-28-a2f174d0e
         pip install -U -r requirements-dev.txt
 
-    - name: 'Build 🐍 Python 📦 package'
-      run: |
-        echo "cp${{ matrix.python-version }}"
-#        export ITK_PACKAGE_VERSION=${{ matrix.itk-python-git-tag }}
-#        export MACOSX_DEPLOYMENT_TARGET=10.9
-#        ./macpython-download-cache-and-build-module-wheels.sh
+    - name: Build sdist
+      run: python setup.py --hide-listing sdist
 
-#    - name: Publish Python package as GitHub Artifact
-#      uses: actions/upload-artifact@v1
-#      with:
-#        name: MacOSWheels
-#        path: dist
+    - name: Build wheel
+      run: python setup.py --hide-listing bdist_wheel ${{ matrix.SETUP_BDIST_WHEEL_ARGS }} -- ${{ matrix.SETUP_CMAKE_ARGS }}
+
+    - name: Publish Python package as GitHub Artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: MacOSWheels${{ matrix.python-version }}
+        path: dist
 
   build-windows-python-packages:
     runs-on: windows-2019
     strategy:
       max-parallel: 2
       matrix:
-        python-version-minor: [5, 6, 7, 8]
-#        include:
-#          - itk-python-git-tag: "v5.1.0.post3"
+        python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
+        include:
+          - SETUP_BDIST_WHEEL_ARGS:
+          - SETUP_CMAKE_ARGS:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        path: "im"
-
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Display Python version
-      run: python -c "import sys; print(sys.version)"
-
-    - name: Display pip version
-      run: pip --version
+    - name: Display Python and pip versions
+      run: |
+        python -c "import sys; print(sys.version)"
+        pip --version
 
     - name: Install Prerequisites
       run: |
-        python -m pip install --disable-pip-version-check --upgrade pip
         pip install git+https://github.com/jcfr/wheeltools.git@wheeltools-2018-10-28-a2f174d0e
         pip install -U -r requirements-dev.txt
 
-#    - name: 'Install Python'
-#      run: |
-#        $pythonArch = "64"
-#        $pythonVersion = "3.${{ matrix.python-version-minor }}"
-#        iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/scikit-build/scikit-ci-addons/master/windows/install-python.ps1'))
+    - name: Build sdist
+      run: python setup.py --hide-listing sdist
 
-#    - name: 'Fetch build dependencies'
-#      shell: bash
-#      run: |
-#        mv im ../../
-#        cd ../../
-#        curl -L "https://github.com/InsightSoftwareConsortium/ITKPythonBuilds/releases/download/${{ matrix.itk-python-git-tag }}/ITKPythonBuilds-windows.zip" -o "ITKPythonBuilds-windows.zip"
-#        7z x ITKPythonBuilds-windows.zip -o/c/P -aoa -r
-#        curl -L "https://data.kitware.com/api/v1/file/5c0ad59d8d777f2179dd3e9c/download" -o "doxygen-1.8.11.windows.bin.zip"
-#        7z x doxygen-1.8.11.windows.bin.zip -o/c/P/doxygen -aoa -r
-#        curl -L "https://data.kitware.com/api/v1/file/5bbf87ba8d777f06b91f27d6/download/grep-win.zip" -o "grep-win.zip"
-#        7z x grep-win.zip -o/c/P/grep -aoa -r
+    - name: Build wheel
+      run: python setup.py --hide-listing bdist_wheel ${{ matrix.SETUP_BDIST_WHEEL_ARGS }} -- ${{ matrix.SETUP_CMAKE_ARGS }}
 
-    - name: 'Build 🐍 Python 📦 package'
-      shell: cmd
-      run: |
-        echo "3${{ matrix.python-version-minor }}-x64"
-#        cd ../../im
-#        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-#        set PATH="C:\P\grep;%PATH%"
-#        set CC=cl.exe
-#        set CXX=cl.exe
-#        C:\Python3${{ matrix.python-version-minor }}-x64\python.exe C:\P\IPP\scripts\windows_build_module_wheels.py --py-envs "3${{ matrix.python-version-minor }}-x64" --no-cleanup
-
-#    - name: Publish Python package as GitHub Artifact
-#      uses: actions/upload-artifact@v1
-#      with:
-#        name: WindowWheel3.${{ matrix.python-version-minor }}
-#        path: ../../im/dist
+    - name: Publish Python package as GitHub Artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: WindowWheel${{ matrix.python-version }}
+        path: dist
 
   publish-python-packages-to-pypi:
     needs:
@@ -166,8 +139,8 @@ jobs:
           mv ${d}/*.whl .
         done
         mkdir dist
-#        mv *.whl dist/
-#        ls dist
+        mv *.whl dist/
+        ls dist
 
 #    - name: Publish 🐍 Python 📦 package to PyPI
 #      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
