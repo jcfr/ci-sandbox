@@ -2,6 +2,9 @@ name: "Slicer Bot"
 
 on:
   pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 11 * * 2"
 
 jobs:
   update-slicer-certificate-bundle:
