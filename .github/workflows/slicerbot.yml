@@ -1,6 +1,9 @@
 name: "Slicer Bot"
 
 on:
+  pull_request:
+    branches:
+      - update-github-workflow-with-schedule-and-dispatch
   workflow_dispatch:
   schedule:
     - cron: "30 11 * * 2"
