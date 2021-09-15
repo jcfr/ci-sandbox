@@ -6,14 +6,15 @@ on:
     - cron: "30 11 * * 2"
   workflow_dispatch:
 
+defaults:
+  owner: mozilla
+  repo: gecko-dev
+  path: security/nss/lib/ckfw/builtins/certdata.txt
+
 jobs:
   update-slicer-certificate-bundle:
     name: Update Slicer.crt certificate bundle
     runs-on: ubuntu-latest
-    defaults:
-      owner: mozilla
-      repo: gecko-dev
-      path: security/nss/lib/ckfw/builtins/certdata.txt
     steps:
       - uses: actions/checkout@v2
 
