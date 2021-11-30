@@ -1,4 +1,8 @@
-#!/bin/sh -l
+#!/bin/bash
+set -e
+set -x
+set -o pipefail
+set -o
 
 cp -r $GITHUB_WORKSPACE /usr/src/Slicer
 
