@@ -17,11 +17,29 @@ on:
 
 
 jobs:
-  docker:
+  build-slicer:
+    name: Build Slicer
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: 'Build Slicer'
+      - name: 'Slicer Build'
+        id: slicer-build
         uses: ./.github/actions/slicer-build
+
+      - name: 'Upload Slicer package'
+        run: |
+          echo "RUNNER_TEMP: ${{ runner.temp }}"
+          echo "RUNNER_TEMP: ${{ env.RUNNER_TEMP }}"
+          echo "RUNNER_TEMP: $RUNNER_TEMP"
+          echo "package: ${{ steps.slicer-build.outputs.package }}"
+          echo "${{ env.RUNNER_TEMP }}/${{ steps.slicer-build.outputs.package }}"
+
+
+      - name: 'Upload Slicer package'
+        uses: actions/upload-artifact@v2
+        with:
+          name: slicer-package
+          path: ${{ runner.temp }}/${{ steps.slicer-build.outputs.package }}
+          retention-days: 1
