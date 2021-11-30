@@ -1,7 +1,9 @@
 #!/bin/sh -l
 
-export
+cp -r $GITHUB_WORKSPACE /usr/src/Slicer
 
-echo "Hello $1"
-time=$(date)
-echo "::set-output name=time::$time"
+/usr/src/Slicer-build/BuildSlicer.sh
+package=$(head -n1 /usr/src/Slicer-build/Slicer-build/PACKAGE_FILE.txt)
+echo "package [${package}]"
+
+echo "::set-output name=package::$package"

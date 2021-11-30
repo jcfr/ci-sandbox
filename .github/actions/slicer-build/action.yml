@@ -4,11 +4,6 @@ description: 'Build Slicer using BuildSlicer.sh script provided by the slicer/sl
 runs:
   using: 'docker'
   image: 'Dockerfile'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  package: # id of output
+    description: 'Name of the generated Slicer package'
