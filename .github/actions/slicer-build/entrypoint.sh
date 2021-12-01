@@ -19,7 +19,7 @@ echo "Hello" > ${package_filepath}
 
 echo "package_filepath [${package_filepath}]"
 
-mv ${package_filepath} $RUNNER_TEMP/
+mv ${package_filepath} $GITHUB_WORKSPACE/
 
 package=$(basename $package_filepath)
 echo "package [${package}]"

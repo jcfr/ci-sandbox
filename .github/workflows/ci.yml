@@ -33,13 +33,14 @@ jobs:
           echo "RUNNER_TEMP: ${{ runner.temp }}"
           echo "RUNNER_TEMP: ${{ env.RUNNER_TEMP }}"
           echo "RUNNER_TEMP: $RUNNER_TEMP"
+          echo "GITHUB_WORKSPACE: ${{ github.workspace }}"
           echo "package: ${{ steps.slicer-build.outputs.package }}"
-          echo "${{ env.RUNNER_TEMP }}/${{ steps.slicer-build.outputs.package }}"
+          echo "${{ github.workspace }}/${{ steps.slicer-build.outputs.package }}"
 
 
       - name: 'Upload Slicer package'
         uses: actions/upload-artifact@v2
         with:
           name: slicer-package
-          path: ${{ runner.temp }}/${{ steps.slicer-build.outputs.package }}
+          path: ${{ github.workspace }}/${{ steps.slicer-build.outputs.package }}
           retention-days: 1
