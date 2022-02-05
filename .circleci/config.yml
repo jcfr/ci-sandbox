@@ -43,7 +43,7 @@ references:
 
   x64_build_job: &x64_build_job
     docker:
-      - image: dockcross/manylinux-x64
+      - image: dockcross/manylinux2014-x64
     <<: *ci_steps
 
   build_job_filters: &build_job_filters
