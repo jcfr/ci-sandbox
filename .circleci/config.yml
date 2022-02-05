@@ -60,7 +60,11 @@ jobs:
     <<: *x64_build_job
   manylinux-x64_cp27-cp27mu:
     <<: *x64_build_job
-  manylinux-x64_cp37-cp37m_upload-sdist:
+  manylinux-x64_cp37-cp37m:
+    <<: *x64_build_job
+  manylinux-x64_cp38-cp38:
+    <<: *x64_build_job
+  manylinux-x64_cp39-cp39_upload-sdist:
     <<: *x64_build_job
 
   # x86
@@ -102,7 +106,11 @@ workflows:
           <<: *build_job_filters
       - manylinux-x64_cp27-cp27mu:
           <<: *build_job_filters
-      - manylinux-x64_cp37-cp37m_upload-sdist:
+      - manylinux-x64_cp37-cp37m:
+          <<: *build_job_filters
+      - manylinux-x64_cp38-cp38:
+          <<: *build_job_filters
+      - manylinux-x64_cp39-cp39_upload-sdist:
           <<: *build_job_filters
       # x86
       # NA
@@ -112,7 +120,9 @@ workflows:
             # x64
             - manylinux-x64_cp27-cp27m
             - manylinux-x64_cp27-cp27mu
-            - manylinux-x64_cp37-cp37m_upload-sdist
+            - manylinux-x64_cp37-cp37m
+            - manylinux-x64_cp38-cp38
+            - manylinux-x64_cp39-cp39_upload-sdist
             # x86
             # NA
           filters:
@@ -123,7 +133,9 @@ workflows:
             # x64
             - manylinux-x64_cp27-cp27m
             - manylinux-x64_cp27-cp27mu
-            - manylinux-x64_cp37-cp37m_upload-sdist
+            - manylinux-x64_cp37-cp37m
+            - manylinux-x64_cp38-cp38
+            - manylinux-x64_cp39-cp39_upload-sdist
             # x86
             # NA
           filters:
