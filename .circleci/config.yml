@@ -23,6 +23,7 @@ references:
             git clone git://github.com/scikit-build/scikit-ci-addons -b master
             pip install -r ./scikit-ci-addons/requirements.txt
             pip install ./scikit-ci-addons
+            pip install lxml  # Required by ctest_junit_formatter
       - run:
           name: run "ctest_junit_formatter"
           command: |
