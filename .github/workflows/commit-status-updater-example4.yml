@@ -1,0 +1,12 @@
+name: commit-status-updater-example4
+
+on: [pull_request]
+
+jobs:
+  # Action sets pull request commit to pending status without comment
+  example4:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ouzi-dev/commit-status-updater@v1.1.2
+
