@@ -1,0 +1,24 @@
+name: commit-status-updater-example3
+
+on:
+  pull_request:
+  push:
+    branches:
+    - master
+    - main
+    - v*
+
+jobs:
+  # Action sets push commit to pending status on start, and updates check at the end of the workflow
+  example3:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ouzi-dev/commit-status-updater@v1.1.2
+      with:
+        status: "pending"
+        addHoldComment: "true"
+        pendingComment: "action pending!"
+        successComment: "action success!"
+        failComment: "action failed!"
+
