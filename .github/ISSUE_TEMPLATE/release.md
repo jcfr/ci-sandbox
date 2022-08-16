@@ -1,5 +1,5 @@
 ---
-name: Slicer Release
+name: Release
 about: Track required steps for creating a Slicer release
 title: Release Slicer vX.Y
 labels: type:enhancement

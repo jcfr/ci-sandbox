@@ -1,5 +1,5 @@
 ---
-name: Slicer Patch Release
+name: Patch Release
 about: Track required steps for creating a Slicer patch release
 title: Patch Release Slicer vX.Y.Z
 labels: type:enhancement
