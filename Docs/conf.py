@@ -103,9 +103,12 @@ notfound_context = {
     'body': r'''
 <script type="text/javascript">
   // Workaround https://github.com/readthedocs/readthedocs.org/issues/9507
-  const regex = /^https:\/\/slicer\.readthedocs\.io\/\w+\/v\d\.\d$/;
+  const regex = /^https:\/\/ci-sandbox\.readthedocs\.io\/\w+\/v\d\.\d$/;
   console.log("window.location [" + window.location + "]");
-  if (regex.test(window.location)) {
+  const result = regex.test(window.location);
+  console.log("test result [" + result + "]");
+  if (result) {
+    console.log("Redirecting to [" + window.location + "/" + "]");
     window.location.replace(window.location + "/");
   }
 </script>
