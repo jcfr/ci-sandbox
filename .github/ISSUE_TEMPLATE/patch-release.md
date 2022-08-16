@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+<!-- Before submitting this issue, replace X.Y.Z with the corresponding value in both the title and content -->
+
 _Based on the state of the relevant sub-tasks, consider updating the issue description changing `:question:` (:question:)  into either `:hourglass:` (:hourglass:) or `:heavy_check_mark:` (:heavy_check_mark:)._
 
 Checklist **Patch Release**:
