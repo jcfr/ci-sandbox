@@ -7,3 +7,7 @@
 *.egg-info
 dist
 build
+
+# Documentation
+Docs/_build
+Docs/_moduledescriptions
