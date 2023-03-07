@@ -1,0 +1,18 @@
+name: commit-status-updater-example6
+
+on: [pull_request]
+
+jobs:
+  # Action sets pull request commit to pending status with comment, and updates check and adds comment at the end of the workflow
+  example6:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ouzi-dev/commit-status-updater@v1.1.2
+      with:
+        addHoldComment: "true"
+    - if: always()
+      uses: ouzi-dev/commit-status-updater@v1.1.2
+      with:
+        addHoldComment: "true"
+        status: "${{ job.status }}"
