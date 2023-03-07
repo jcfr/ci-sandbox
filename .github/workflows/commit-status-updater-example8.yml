@@ -1,0 +1,17 @@
+name: commit-status-updater-example8
+
+on: [pull_request]
+
+jobs:
+  # Action no comments, set commit to "error" status and set url, description and specific name
+  example8:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ouzi-dev/commit-status-updater@v1.1.2
+      with:
+        status: "error"
+        url: http://myurl.io/
+        description: "this is my status check"
+        name: "name of my status check"
+
