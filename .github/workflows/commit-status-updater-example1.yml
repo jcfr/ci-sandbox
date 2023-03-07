@@ -1,0 +1,15 @@
+name: commit-status-updater-example1
+
+on:
+  push:
+    branches:
+    - github-action-test-commit-status-update-example1
+
+jobs:
+  # Action sets push commit to pending status
+  example1:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ouzi-dev/commit-status-updater@v1.1.2
+
