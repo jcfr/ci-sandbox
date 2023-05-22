@@ -1,0 +1,99 @@
+name: Project
+description: Issue template to streamline the creation of project pages.
+title: "Project: "
+labels: ["project", "event:PW39_2023_Montreal"]
+assignees:
+  - jcfr
+
+body:
+
+- type: dropdown
+  attributes:
+    label: Category
+    description: Select a category that best describes your project. This will help others to quickly understand the focus of your project.
+    options:
+      - VR/AR and Rendering
+      - IGT and Training
+      - Segmentation / Classification / Landmarking
+      - Quantification and Computation
+      - Cloud / Web
+      - Infrastructure
+  validations:
+    required: true
+- type: markdown
+  attributes:
+    value: |
+      _If you are unable to find a category that is suitable for your project, or believe that a specific category is missing, please discuss it with the organizers._
+
+- type: textarea
+  attributes:
+    label: Key Investigators
+    placeholder: |
+      - Investigator 1 (Affiliation, Country)
+      - Investigator 2 (Affiliation, Country)
+      - Investigator 3 (Affiliation, Country)
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Project Description
+    description: Add a short paragraph describing the project.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Objective
+    description: Describe here WHAT you would like to achieve (what you will have as end result).
+    placeholder: |
+      1. Objective A. Describe **what you plan to achieve** in 1-2 sentences.
+      1. Objective B. ...
+      1. Objective C. ...
+    value: |
+      1. Objective A. Describe **what you plan to achieve** in 1-2 sentences.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Approach and Plan
+    description: Describe here HOW you would like to achieve the objectives stated above.
+    placeholder: |
+      1. Describe specific steps of **what you plan to do** to achieve the above described objectives.
+      1. ...
+      1. ...
+    value: |
+      1. Describe specific steps of **what you plan to do** to achieve the above described objectives.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Progress and Next Steps
+    description: Update this section as you make progress, describing of what you have ACTUALLY DONE. If there are specific steps that you could not complete then you can describe them here, too.
+    placeholder: |
+      1. Describe specific steps you **have actually done**.
+      1. ...
+      1. ...
+    value: |
+      1. Describe specific steps you **have actually done**.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Illustrations
+    description: Add pictures and links to videos that demonstrate what has been accomplished.
+    placeholder: |
+      ![Description of picture](Example2.jpg)
+      ![Some more images](Example2.jpg)
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Background and References
+    description: If you developed any software, include link to the source code repository. If possible, also add links to sample data, and to any relevant publications.
+  validations:
+    required: false
