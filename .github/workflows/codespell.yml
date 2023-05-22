@@ -2,10 +2,11 @@ name: codespell
 
 on:
   pull_request:
+    branches:
+    - main-ci
   push:
     branches:
-    - master
-    - main
+    - main-ci
     - v*
 
 jobs:
