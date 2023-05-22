@@ -49,6 +49,8 @@ references:
 
   build_job_filters: &build_job_filters
     filters:
+      branches:
+        only: main-circleci
       tags:
         ignore:
           - latest
@@ -118,7 +120,7 @@ workflows:
             # NA
           filters:
             branches:
-              only: master
+              only: main-circleci
       - deploy-release:
           requires:
             # x64
