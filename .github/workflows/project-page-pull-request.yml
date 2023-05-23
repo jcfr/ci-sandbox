@@ -129,7 +129,7 @@ jobs:
         approach=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."approach-and-plan".text')
         set_multiline_output_param "approach" "$approach"
 
-        progress=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."progress-and-sext-steps".text')
+        progress=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."progress-and-next-steps".text')
         set_multiline_output_param "progress" "$progress"
 
         illustrations=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '.illustrations.text')
