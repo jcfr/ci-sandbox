@@ -108,6 +108,9 @@ jobs:
     - name: Extract issue fields
       id: extract
       run: |
+        category=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."category".text')
+        echo "category=$category" >> $GITHUB_OUTPUT
+
         description=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."project-description".text')
         echo "description=$description" >> $GITHUB_OUTPUT
 
@@ -134,6 +137,7 @@ jobs:
         strict: true
         variables: |
           title=${{ steps.project_issue.outputs.title }}
+          category=${{ steps.parse.outputs.category }}
           description=${{ steps.parse.outputs.description }}
           objective=${{ steps.parse.outputs.objective }}
           approach=${{ steps.parse.outputs.approach }}
