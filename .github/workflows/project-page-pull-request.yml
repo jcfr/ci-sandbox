@@ -57,7 +57,7 @@ jobs:
     - name: Generate project directory name
       id: project_directory
       run: |
-        title=$(echo ${{ steps.project_issue.output.title }})
+        title=$(echo ${{ steps.project_issue.outputs.title }})
         echo "title [$title]"
 
         # If any, remove"Project:" prefix
@@ -77,8 +77,8 @@ jobs:
     - name: Check if project already exists
       id: check_project_exists
       run: |
-        event_name=${{ steps.event_info.output.name }}
-        project_directory=${{ steps.event_info.output.name }}/Projects/${{ steps.project_directory.output.name }}
+        event_name=${{ steps.event_info.outputs.name }}
+        project_directory=${{ steps.event_info.outputs.name }}/Projects/${{ steps.project_directory.outputs.name }}
         if [[ -d $event_name/Projects/ ]]; then
           echo "::error::Project already exist"
           exit 1
@@ -96,15 +96,15 @@ jobs:
     
     - name: Create project directory
       run: |
-        event_name=${{ steps.event_info.output.name }}
-        directory_name=${{ steps.project_directory.output.name }}
+        event_name=${{ steps.event_info.outputs.name }}
+        directory_name=${{ steps.project_directory.outputs.name }}
         mkdir $event_name/Projects/$directory_name
     
     - name: Issue Forms Body Parser
       id: parse
       uses: zentered/issue-forms-body-parser@v2.0.0
       with:
-        body: ${{ steps.project_issue.output.body }}
+        body: ${{ steps.project_issue.outputs.body }}
 
     - name: Extract issue fields
       id: extract
@@ -130,17 +130,17 @@ jobs:
     - name: Generate Project README.md
       uses: cuchi/jinja2-action@v1.2.0
       with:
-        template: ${{ steps.event_info.output.name }}/Projects/Template/README.md.j2
-        output_file: ${{ steps.event_info.output.name }}/Projects/${{ steps.project_directory.output.name }}/README.md
+        template: ${{ steps.event_info.outputs.name }}/Projects/Template/README.md.j2
+        output_file: ${{ steps.event_info.outputs.name }}/Projects/${{ steps.project_directory.outputs.name }}/README.md
         strict: true
         variables: |
-          title=${{ steps.project_issue.output.title }}
-          description=${{ steps.parse.output.description }}
-          objective=${{ steps.parse.output.objective }}
-          approach=${{ steps.parse.output.approach }}
-          progress=${{ steps.parse.output.progress }}
-          illustrations=${{ steps.parse.output.illustrations }}
-          background=${{ steps.parse.output.background }}
+          title=${{ steps.project_issue.outputs.title }}
+          description=${{ steps.parse.outputs.description }}
+          objective=${{ steps.parse.outputs.objective }}
+          approach=${{ steps.parse.outputs.approach }}
+          progress=${{ steps.parse.outputs.progress }}
+          illustrations=${{ steps.parse.outputs.illustrations }}
+          background=${{ steps.parse.outputs.background }}
 
     - name: Create Pull Request
       id: cpr
@@ -148,17 +148,17 @@ jobs:
       with:
         token: ${{ secrets.PAT }}
         commit-message: |
-          ${{ steps.event_info.output.name }}: Add ${{ steps.project_directory.output.name }}
+          ${{ steps.event_info.outputs.name }}: Add ${{ steps.project_directory.outputs.name }}
         committer: GitHub <noreply@github.com>
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-        branch: ${{ steps.event_info.output.name }}/${{ steps.project_directory.output.name }}
+        branch: ${{ steps.event_info.outputs.name }}/${{ steps.project_directory.outputs.name }}
         delete-branch: true
-        title: "${{ steps.event_info.output.name }}: Add ${{ steps.project_issue.output.title }}"
+        title: "${{ steps.event_info.outputs.name }}: Add ${{ steps.project_issue.outputs.title }}"
         body: |
             Fixes #${{ github.event.issue.number }}
         labels: |
           project
-          event:${{ steps.event_info.output.name }}
+          event:${{ steps.event_info.outputs.name }}
 
     - name: Create or update comment ❌
       if: ${{ failure() && steps.check_project_exists.outcome == 'success'  }}
