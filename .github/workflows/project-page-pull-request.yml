@@ -152,11 +152,17 @@ jobs:
           illustrations=${{ steps.parse.outputs.illustrations }}
           background=${{ steps.parse.outputs.background }}
 
+    - uses: tibdex/github-app-token@v1
+      id: generate-token
+      with:
+        app_id: ${{ secrets.APP_ID }}
+        private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
     - name: Create Pull Request
       id: cpr
       uses: peter-evans/create-pull-request@v5
       with:
-        token: ${{ secrets.PAT }}
+        token: ${{ steps.generate-token.outputs.token }}
         commit-message: |
           ${{ steps.event_info.outputs.name }}: Add ${{ steps.project_directory.outputs.name }}
         committer: GitHub <noreply@github.com>
