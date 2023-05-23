@@ -34,6 +34,7 @@ jobs:
         body-includes: Project Page Pull Request Creation
 
     - name: Create or update comment ⌛
+      id: couc
       uses: peter-evans/create-or-update-comment@v3
       with:
         comment-id: ${{ steps.fc.outputs.comment-id }}
@@ -87,8 +88,8 @@ jobs:
       if: ${{ failure() && steps.check_project_exists.outcome == 'failure' }}
       uses: peter-evans/create-or-update-comment@v3
       with:
-        comment-id: ${{ steps.fc.outputs.comment-id }}
-        issue-number: ${{ github.event.pull_request.number }}
+        comment-id: ${{ steps.couc.outputs.comment-id }}
+        issue-number: ${{ github.event.issue.number }}
         body: |
           Project Page Pull Request Creation: :stop_sign: Project already exists
         edit-mode: replace
@@ -163,8 +164,8 @@ jobs:
       if: ${{ failure() && steps.check_project_exists.outcome == 'success'  }}
       uses: peter-evans/create-or-update-comment@v3
       with:
-        comment-id: ${{ steps.fc.outputs.comment-id }}
-        issue-number: ${{ github.event.pull_request.number }}
+        comment-id: ${{ steps.couc.outputs.comment-id }}
+        issue-number: ${{ github.event.issue.number }}
         body: |
           Project Page Pull Request Creation: :x: See ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         edit-mode: replace
@@ -173,8 +174,8 @@ jobs:
       if: ${{ success() }}
       uses: peter-evans/create-or-update-comment@v3
       with:
-        comment-id: ${{ steps.fc.outputs.comment-id }}
-        issue-number: ${{ github.event.pull_request.number }}
+        comment-id: ${{ steps.couc.outputs.comment-id }}
+        issue-number: ${{ github.event.issue.number }}
         body: |
           Project Page Pull Request Creation: :white_check_mark: See ${{ steps.cpr.outputs.pull-request-url }}
         edit-mode: replace
