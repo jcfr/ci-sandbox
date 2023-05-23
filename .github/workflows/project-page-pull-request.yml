@@ -121,7 +121,7 @@ jobs:
         echo "category=$category" >> $GITHUB_OUTPUT
 
         description=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."project-description".text')
-        set_multiline_output_param "description" "$description"
+        set_multiline_output_param "description" $description
 
         objective=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '.objective.text')
         set_multiline_output_param "objective" "$objective"
