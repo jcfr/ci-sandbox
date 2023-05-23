@@ -110,49 +110,30 @@ jobs:
     - name: Extract issue fields
       id: extract
       run: |
-        function set_multiline_output_param() {
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "$1<<$EOF" >> $GITHUB_OUTPUT
-          echo "$2" >> $GITHUB_OUTPUT
-          echo "$EOF" >> $GITHUB_OUTPUT
-        }
-
-        category=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."category".text')
-        echo "category=$category" >> $GITHUB_OUTPUT
-
-        description=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."project-description".text')
-        set_multiline_output_param "description" "$description"
-
-        objective=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '.objective.text')
-        set_multiline_output_param "objective" "$objective"
-
-        approach=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."approach-and-plan".text')
-        set_multiline_output_param "approach" "$approach"
-
-        progress=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."progress-and-next-steps".text')
-        set_multiline_output_param "progress" "$progress"
-
-        illustrations=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '.illustrations.text')
-        set_multiline_output_param "illustrations" "$illustrations"
-
-        background=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."background-and-references".text')
-        set_multiline_output_param "background" "$background"
+        echo ${{ toJSON(steps.parse.outputs.data) }} | \
+        jq --arg title "${{ steps.project_issue.outputs.title }}" '{
+          "title": $title,
+          "category": .category.text,
+          "key-investigators": [.["key-investigators"].list[].text],
+          "description": .["project-description"].text,
+          "objective": .objective.text,
+          "approach": .["approach-and-plan"].text,
+          "progress": .["progress-and-next-steps"].text,
+          "illustrations": .illustrations.text,
+          "background": .["background-and-references"].text
+        }' > template-data.json
 
     - name: Generate Project README.md
       uses: cuchi/jinja2-action@v1.2.0
       with:
         template: ${{ steps.event_info.outputs.name }}/Projects/Template/README.md.j2
         output_file: ${{ steps.event_info.outputs.name }}/Projects/${{ steps.project_directory.outputs.name }}/README.md
-        strict: true
-        variables: |
-          title=${{ steps.project_issue.outputs.title }}
-          category=${{ steps.extract.outputs.category }}
-          description=${{ steps.extract.outputs.description }}
-          objective=${{ steps.extract.outputs.objective }}
-          approach=${{ steps.extract.outputs.approach }}
-          progress=${{ steps.extract.outputs.progress }}
-          illustrations=${{ steps.extract.outputs.illustrations }}
-          background=${{ steps.extract.outputs.background }}
+        data_file: template-data.json
+        data_format: json
+
+    - name: Cleanup
+      run: |
+        rm template-data.json
 
     - uses: tibdex/github-app-token@v1
       id: generate-token
