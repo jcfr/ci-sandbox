@@ -108,26 +108,33 @@ jobs:
     - name: Extract issue fields
       id: extract
       run: |
+        function set_multiline_output_param() {
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "$1<<$EOF" >> $GITHUB_OUTPUT
+          echo "$2" >> $GITHUB_OUTPUT
+          echo "$EOF" >> $GITHUB_OUTPUT
+        }
+
         category=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."category".text')
         echo "category=$category" >> $GITHUB_OUTPUT
 
         description=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."project-description".text')
-        echo "description=$description" >> $GITHUB_OUTPUT
+        set_multiline_output_param "description" "$description"
 
         objective=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '.objective.text')
-        echo "objective=$objective" >> $GITHUB_OUTPUT
+        set_multiline_output_param "objective" "$objective"
 
         approach=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."approach-and-plan".text')
-        echo "approach=$approach" >> $GITHUB_OUTPUT
+        set_multiline_output_param "approach" "$approach"
 
         progress=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."progress-and-sext-steps".text')
-        echo "progress=$progress" >> $GITHUB_OUTPUT
+        set_multiline_output_param "progress" "$progress"
 
         illustrations=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '.illustrations.text')
-        echo "illustrations=$illustrations" >> $GITHUB_OUTPUT
+        set_multiline_output_param "illustrations" "$illustrations"
 
         background=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."background-and-references".text')
-        echo "background=$background" >> $GITHUB_OUTPUT
+        set_multiline_output_param "background" "$background"
 
     - name: Generate Project README.md
       uses: cuchi/jinja2-action@v1.2.0
