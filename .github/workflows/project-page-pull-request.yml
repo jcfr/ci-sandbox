@@ -48,8 +48,7 @@ jobs:
         issue-number: ${{ github.event.issue.number }}
         body: |
           ## Project Page Pull Request Creation
-          :hourglass: In progress
-          ![Project Page Pull Request Creation](https://github.com/${{ github.workflow_ref }}/badge.svg)
+          :hourglass: **IN PROGRESS**: ![Project Page Pull Request Creation](https://github.com/${{ github.workflow_ref }}/badge.svg)
         edit-mode: replace
 
     - name: Extract event info
@@ -100,7 +99,7 @@ jobs:
         issue-number: ${{ github.event.issue.number }}
         body: |
           ## Project Page Pull Request Creation
-          :stop_sign: Project already exists
+          :stop_sign: **STOPPED**: Project already exists
         edit-mode: replace
     
     - name: Create project directory
@@ -177,7 +176,7 @@ jobs:
         issue-number: ${{ github.event.issue.number }}
         body: |
           ## Project Page Pull Request Creation
-          :x: See ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          :x: **FAILED**: See ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         edit-mode: replace
 
     - name: Create or update comment ✅
@@ -188,7 +187,7 @@ jobs:
         issue-number: ${{ github.event.issue.number }}
         body: |
           ## Project Page Pull Request Creation
-          :white_check_mark: See ${{ steps.cpr.outputs.pull-request-url }}
+          :white_check_mark: **COMPLETED**: See ${{ steps.cpr.outputs.pull-request-url }}
         edit-mode: replace
 
     - name: Remove "project:create" label
