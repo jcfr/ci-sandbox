@@ -22,8 +22,15 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
-        echo "title=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json title --jq '.title')" >> $GITHUB_OUTPUT
-        echo "body=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq '.body')" >> $GITHUB_OUTPUT
+        title=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json title --jq '.title')
+        echo "title=$title" >> $GITHUB_OUTPUT
+
+        body=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json body --jq '.body')
+
+        EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+        echo "body<<$EOF" >> $GITHUB_OUTPUT
+        echo "${body}" >> $GITHUB_OUTPUT
+        echo "$EOF" >> $GITHUB_OUTPUT
 
     - name: Find project issue comment
       uses: peter-evans/find-comment@v2.4.0
