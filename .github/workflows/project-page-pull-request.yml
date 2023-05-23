@@ -113,7 +113,7 @@ jobs:
         function set_multiline_output_param() {
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           echo "$1<<$EOF" >> $GITHUB_OUTPUT
-          echo "$2" >> $GITHUB_OUTPUT
+          echo $2 >> $GITHUB_OUTPUT
           echo "$EOF" >> $GITHUB_OUTPUT
         }
 
