@@ -41,7 +41,7 @@ jobs:
         issue-number: ${{ github.event.issue.number }}
         body: |
           ## Project Page Pull Request Creation
-          :hourglass: **IN PROGRESS**: ![Project Page Pull Request Creation](https://github.com/${{ github.workflow_ref }}/badge.svg)
+          :hourglass: **IN PROGRESS**: ![Project Page Pull Request Creation](${{ github.server_url }}/${{ github.repository }}/actions/workflows/project-page-pull-request.yml/badge.svg)
         edit-mode: replace
 
     - name: Extract event info
