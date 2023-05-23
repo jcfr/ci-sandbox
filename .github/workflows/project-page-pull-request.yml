@@ -22,15 +22,14 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
-        echo "number=$(gh issue view ${{ inputs.issue_number }} --repo ${{ github.repo }} --json number --jq '.number')" >> $GITHUB_OUTPUT
-        echo "title=$(gh issue view ${{ inputs.issue_number }} --repo ${{ github.repo }} --json title --jq '.title')" >> $GITHUB_OUTPUT
-        echo "body=$(gh issue view ${{ inputs.issue_number }} --repo ${{ github.repo }} --json body --jq '.body')" >> $GITHUB_OUTPUT
+        echo "title=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repo }} --json title --jq '.title')" >> $GITHUB_OUTPUT
+        echo "body=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repo }} --json body --jq '.body')" >> $GITHUB_OUTPUT
 
     - name: Find project issue comment
       uses: peter-evans/find-comment@v2.4.0
       id: fc
       with:
-        issue-number: ${{ steps.project_issue.output.number }}
+        issue-number: ${{ github.event.issue.number }}
         comment-author: 'github-actions[bot]'
         body-includes: Project Page Pull Request Creation
 
@@ -38,7 +37,7 @@ jobs:
       uses: peter-evans/create-or-update-comment@v3
       with:
         comment-id: ${{ steps.fc.outputs.comment-id }}
-        issue-number: ${{ github.event.pull_request.number }}
+        issue-number: ${{ github.event.issue.number }}
         body: |
           Project Page Pull Request Creation: :hourglass:
           ![Project Page Generation](https://github.com/github/docs/actions/workflows/${{ github.workflow }}/badge.svg)
@@ -155,7 +154,7 @@ jobs:
         delete-branch: true
         title: "${{ steps.event_info.output.name }}: Add ${{ steps.project_issue.output.title }}"
         body: |
-            Fixes #${{ steps.project_issue.output.number }}
+            Fixes #${{ github.event.issue.number }}
         labels: |
           project
           event:${{ steps.event_info.output.name }}
