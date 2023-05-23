@@ -114,13 +114,15 @@ jobs:
         jq --arg title "${{ steps.project_issue.outputs.title }}" '{
           "title": $title,
           "category": .category.text,
-          "key-investigators": [.["key-investigators"].list[].text],
           "description": .["project-description"].text,
           "objective": .objective.text,
           "approach": .["approach-and-plan"].text,
           "progress": .["progress-and-next-steps"].text,
           "illustrations": .illustrations.text,
-          "background": .["background-and-references"].text
+          "background": .["background-and-references"].text,
+          "investigators": [.["key-investigators"].list[].text |
+            capture("(?<firstname>[^,]+)(?:[[:space:]]+[[:alpha:]]+)*,[[:space:]]+(?<lastname>[^,]+(?:[[:space:]]+[[:alpha:]]+)*?) \\((?<affiliation>[^,]+)(?:, (?<country>[^)]+))?\\)") |
+            {firstname, lastname, affiliation, country: (.country // "")}],
         }' > template-data.json
 
     - name: Generate Project README.md
