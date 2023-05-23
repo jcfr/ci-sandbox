@@ -19,6 +19,8 @@ jobs:
     steps:
     - name: Fetch the project issue info
       id: project_issue
+      env:
+        GH_TOKEN: ${{ github.token }}
       run: |
         echo "number=$(gh issue view ${{ inputs.issue_number }} --repo ${{ github.repo }} --json number --jq '.number')" >> $GITHUB_OUTPUT
         echo "title=$(gh issue view ${{ inputs.issue_number }} --repo ${{ github.repo }} --json title --jq '.title')" >> $GITHUB_OUTPUT
