@@ -86,7 +86,7 @@ jobs:
       run: |
         event_name=${{ steps.event_info.outputs.name }}
         project_directory=${{ steps.event_info.outputs.name }}/Projects/${{ steps.project_directory.outputs.name }}
-        if [[ -d $event_name/Projects/ ]]; then
+        if [ -d "$project_directory" ]; then
           echo "::error::Project already exist"
           exit 1
         fi
