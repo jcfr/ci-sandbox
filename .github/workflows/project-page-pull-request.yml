@@ -171,7 +171,7 @@ jobs:
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
         branch: ${{ steps.event_info.outputs.name }}/${{ steps.project_directory.outputs.name }}
         delete-branch: true
-        title: Adding project "${{ steps.project_directory.outputs.name }}" to "${{ steps.event_info.outputs.name }}"
+        title: Add project "${{ steps.project_issue.outputs.title }}" to "${{ steps.event_info.outputs.name }}"
         body: |
             Fixes #${{ github.event.issue.number }}
         labels: |
