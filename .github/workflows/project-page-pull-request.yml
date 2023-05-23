@@ -166,12 +166,12 @@ jobs:
       with:
         token: ${{ steps.generate-token.outputs.token }}
         commit-message: |
-          ${{ steps.event_info.outputs.name }}: Add ${{ steps.project_directory.outputs.name }}
+          ${{ steps.event_info.outputs.name }}: Add project ${{ steps.project_directory.outputs.name }}
         committer: GitHub <noreply@github.com>
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
         branch: ${{ steps.event_info.outputs.name }}/${{ steps.project_directory.outputs.name }}
         delete-branch: true
-        title: "${{ steps.event_info.outputs.name }}: Add ${{ steps.project_issue.outputs.title }}"
+        title: Adding project "${{ steps.project_directory.outputs.name }}" to "${{ steps.event_info.outputs.name }}"
         body: |
             Fixes #${{ github.event.issue.number }}
         labels: |
