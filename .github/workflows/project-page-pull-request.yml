@@ -1,0 +1,194 @@
+name: Project Page Pull Request Creation
+
+on:
+  issues:
+    types: [ labeled ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # Check if the event is not triggered by a fork
+    if: >
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.label.name == 'project:create'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+    - name: Fetch the project issue info
+      id: project_issue
+      run: |
+        echo "number=$(gh issue view ${{ inputs.issue_number }} --repo ${{ github.repo }} --json number --jq '.number')" >> $GITHUB_OUTPUT
+        echo "title=$(gh issue view ${{ inputs.issue_number }} --repo ${{ github.repo }} --json title --jq '.title')" >> $GITHUB_OUTPUT
+        echo "body=$(gh issue view ${{ inputs.issue_number }} --repo ${{ github.repo }} --json body --jq '.body')" >> $GITHUB_OUTPUT
+
+    - name: Find project issue comment
+      uses: peter-evans/find-comment@v2
+      id: fc
+      with:
+        issue-number: ${{ steps.project_issue.output.number }}
+        comment-author: 'github-actions[bot]'
+        body-includes: Project Page Pull Request Creation
+
+    - name: Create or update comment ⌛
+      uses: peter-evans/create-or-update-comment@v3
+      with:
+        comment-id: ${{ steps.fc.outputs.comment-id }}
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          Project Page Pull Request Creation: :hourglass:
+          ![Project Page Generation](https://github.com/github/docs/actions/workflows/${{ github.workflow }}/badge.svg)
+        edit-mode: replace
+
+    - name: Extract event info
+      id: event_info
+      run: |
+        # TODO: Extract event name from "event:NAME" label
+        event_name="PW39_2023_Montreal"
+        echo "name=$event_name" >> $GITHUB_OUTPUT
+
+    - uses: actions/checkout@v3
+
+
+    - name: Generate project directory name
+      id: project_directory
+      run: |
+        title=$(echo ${{ steps.project_issue.output.title }})
+        echo "title [$title]"
+
+        # If any, remove"Project:" prefix
+        title=$(echo "$title" |  sed 's/^Project:\s*//')
+        echo "title [$title]"
+
+        # Convert to title case
+        title_cased=$(echo "$input" | sed 's/.*/\L&/; s/[a-z]*/\u&/g')
+        echo "title_cased [$title_cased]"
+
+        # Sanitize string to use as a directory name
+        directory_name=$(echo "$title_cased" | tr -cs '[:alnum:]' '_' | sed 's/_//g')
+        echo "directory_name [$directory_name]"
+
+        echo "name=$directory_name" >> $GITHUB_OUTPUT
+        
+    - name: Check if project already exists
+      id: check_project_exists
+      run: |
+        event_name=${{ steps.event_info.output.name }}
+        project_directory=${{ steps.event_info.output.name }}/Projects/${{ steps.project_directory.output.name }}
+        if [[ -d $event_name/Projects/ ]]; then
+          echo "::error::Project already exist"
+          exit 1
+        fi
+
+    - name: Create or update comment 🛑
+      if: ${{ failure() && steps.check_project_exists.outcome == 'failure' }}
+      uses: peter-evans/create-or-update-comment@v3
+      with:
+        comment-id: ${{ steps.fc.outputs.comment-id }}
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          Project Page Pull Request Creation: :stop_sign: Project already exists
+        edit-mode: replace
+    
+    - name: Create project directory
+      run: |
+        event_name=${{ steps.event_info.output.name }}
+        directory_name=${{ steps.project_directory.output.name }}
+        mkdir $event_name/Projects/$directory_name
+    
+    - name: Issue Forms Body Parser
+      id: parse
+      uses: zentered/issue-forms-body-parser@v2.0.0
+      with:
+        body: ${{ steps.project_issue.output.body }}
+
+    - name: Extract issue fields
+      id: extract
+      run: |
+        description=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."project-description".text')
+        echo "description=$description" >> $GITHUB_OUTPUT
+
+        objective=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '.objective.text')
+        echo "objective=$objective" >> $GITHUB_OUTPUT
+
+        approach=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."approach-and-plan".text')
+        echo "approach=$approach" >> $GITHUB_OUTPUT
+
+        progress=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."progress-and-sext-steps".text')
+        echo "progress=$progress" >> $GITHUB_OUTPUT
+
+        illustrations=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '.illustrations.text')
+        echo "illustrations=$illustrations" >> $GITHUB_OUTPUT
+
+        background=$(echo ${{ toJSON(steps.parse.outputs.data) }} | jq '."background-and-references".text')
+        echo "background=$background" >> $GITHUB_OUTPUT
+
+    - name: Generate Project README.md
+      uses: cuchi/jinja2-action@v1.2.0
+      with:
+        template: ${{ steps.event_info.output.name }}/Projects/Template/README.md.j2
+        output_file: ${{ steps.event_info.output.name }}/Projects/${{ steps.project_directory.output.name }}/README.md
+        strict: true
+        variables: |
+          title=${{ steps.project_issue.output.title }}
+          description=${{ steps.parse.output.description }}
+          objective=${{ steps.parse.output.objective }}
+          approach=${{ steps.parse.output.approach }}
+          progress=${{ steps.parse.output.progress }}
+          illustrations=${{ steps.parse.output.illustrations }}
+          background=${{ steps.parse.output.background }}
+
+    - name: Create Pull Request
+      id: cpr
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.PAT }}
+        commit-message: |
+          ${{ steps.event_info.output.name }}: Add ${{ steps.project_directory.output.name }}
+        committer: GitHub <noreply@github.com>
+        author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+        branch: ${{ steps.event_info.output.name }}/${{ steps.project_directory.output.name }}
+        delete-branch: true
+        title: "${{ steps.event_info.output.name }}: Add ${{ steps.project_issue.output.title }}"
+        body: |
+            Fixes #${{ steps.project_issue.output.number }}
+        labels: |
+          project
+          event:${{ steps.event_info.output.name }}
+
+    - name: Create or update comment ❌
+      if: ${{ failure() && steps.check_project_exists.outcome == 'success'  }}
+      uses: peter-evans/create-or-update-comment@v3
+      with:
+        comment-id: ${{ steps.fc.outputs.comment-id }}
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          Project Page Pull Request Creation: :x: See ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        edit-mode: replace
+
+    - name: Create or update comment ✅
+      if: ${{ success() }}
+      uses: peter-evans/create-or-update-comment@v3
+      with:
+        comment-id: ${{ steps.fc.outputs.comment-id }}
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          Project Page Pull Request Creation: :white_check_mark: See ${{ steps.cpr.outputs.pull-request-url }}
+        edit-mode: replace
+
+    - name: Remove "project:create" label
+      if: ${{ always() }}
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.removeLabel({
+            issue_number: context.payload.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            name: ["project:create"]
+          })
+
