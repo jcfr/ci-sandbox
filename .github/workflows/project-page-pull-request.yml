@@ -73,7 +73,7 @@ jobs:
         echo "title [$title]"
 
         # Convert to title case
-        title_cased=$(echo "$input" | sed 's/.*/\L&/; s/[a-z]*/\u&/g')
+        title_cased=$(echo "$title" | sed 's/.*/\L&/; s/[a-z]*/\u&/g')
         echo "title_cased [$title_cased]"
 
         # Sanitize string to use as a directory name
