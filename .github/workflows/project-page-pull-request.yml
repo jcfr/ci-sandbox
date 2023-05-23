@@ -23,6 +23,12 @@ jobs:
         GH_TOKEN: ${{ github.token }}
       run: |
         title=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json title --jq '.title')
+        echo "title [$title]"
+
+        # If any, remove"Project:" prefix
+        title=$(echo "$title" |  sed 's/^Project:\s*//')
+        echo "title [$title]"
+
         echo "title=$title" >> $GITHUB_OUTPUT
 
     - name: Find project issue comment
@@ -58,10 +64,6 @@ jobs:
       id: project_directory
       run: |
         title=$(echo ${{ steps.project_issue.outputs.title }})
-        echo "title [$title]"
-
-        # If any, remove"Project:" prefix
-        title=$(echo "$title" |  sed 's/^Project:\s*//')
         echo "title [$title]"
 
         # Convert to title case
