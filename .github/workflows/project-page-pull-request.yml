@@ -146,13 +146,13 @@ jobs:
         strict: true
         variables: |
           title=${{ steps.project_issue.outputs.title }}
-          category=${{ steps.parse.outputs.category }}
-          description=${{ steps.parse.outputs.description }}
-          objective=${{ steps.parse.outputs.objective }}
-          approach=${{ steps.parse.outputs.approach }}
-          progress=${{ steps.parse.outputs.progress }}
-          illustrations=${{ steps.parse.outputs.illustrations }}
-          background=${{ steps.parse.outputs.background }}
+          category=${{ steps.extract.outputs.category }}
+          description=${{ steps.extract.outputs.description }}
+          objective=${{ steps.extract.outputs.objective }}
+          approach=${{ steps.extract.outputs.approach }}
+          progress=${{ steps.extract.outputs.progress }}
+          illustrations=${{ steps.extract.outputs.illustrations }}
+          background=${{ steps.extract.outputs.background }}
 
     - uses: tibdex/github-app-token@v1
       id: generate-token
