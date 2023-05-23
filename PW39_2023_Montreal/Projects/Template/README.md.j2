@@ -5,14 +5,14 @@ project_title: {{ title }}
 category: {{ category }}
 
 key_investigators:
-- firstname: Person
-  lastname: Doe
-  affiliation: University
-
-- firstname: Person2
-  lastname: Doe2
-  affiliation: University2
-  country: Spain
+{% for investigator in investigators %}
+- firstname: {{ investigator.firstname }}
+  lastname: {{ investigator.lastname }}
+  affiliation: {{ investigator.affiliation }}
+{% if investigator.country %}
+  country: {{ investigator.country }}
+{%- endif %}
+{% endfor %}
 ---
 
 # Project Description
