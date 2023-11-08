@@ -53,5 +53,5 @@ echo
 #   - hooks_rev_count: Number of revisions associated with the "hooks" branch
 #   - SetupForDevelopment_VERSION: The sum of script_revision_count and hooks_rev_count
 #
-SetupForDevelopment_VERSION=9
+SetupForDevelopment_VERSION=17
 git config hooks.SetupForDevelopment ${SetupForDevelopment_VERSION}
